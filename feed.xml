@@ -3,7 +3,7 @@
     <title>NFY ♪♫♬♭♯♩♮♫♪°</title>
     <link href="https://notfullyet.com/feed.xml" rel="self" />
     <link href="https://notfullyet.com" />
-    <updated>2025-09-28T17:14:57+07:00</updated>
+    <updated>2025-10-12T22:06:24+07:00</updated>
     <author>
         <name>thehill137</name>
     </author>
@@ -17,6 +17,7 @@
         <link href="https://notfullyet.com/tu-ky-and-tang-dong-giam-chu-y.html"/>
         <id>https://notfullyet.com/tu-ky-and-tang-dong-giam-chu-y.html</id>
         <media:content url="https://notfullyet.com/media/posts/4/unnamed-1.png" medium="image" />
+            <category term="Kiến thức"/>
 
         <updated>2025-09-28T16:29:00+07:00</updated>
             <summary>
@@ -84,6 +85,7 @@
         <link href="https://notfullyet.com/may-mu-thong-tin-ve-tu-ky.html"/>
         <id>https://notfullyet.com/may-mu-thong-tin-ve-tu-ky.html</id>
         <media:content url="https://notfullyet.com/media/posts/3/Gemini_Generated_Image_ij16l2ij16l2ij16.png" medium="image" />
+            <category term="Kiến thức"/>
 
         <updated>2025-07-25T15:12:44+07:00</updated>
             <summary>
@@ -214,6 +216,7 @@
         <link href="https://notfullyet.com/dung-cho-doi-phep-mau-chung-toi-tim-no-cung-con.html"/>
         <id>https://notfullyet.com/dung-cho-doi-phep-mau-chung-toi-tim-no-cung-con.html</id>
         <media:content url="https://notfullyet.com/media/posts/2/assets_task_01k0sbdsxmfc0t8b84k1tsg4dg_1753197597_img_0.webp" medium="image" />
+            <category term="Đồng hành"/>
 
         <updated>2025-07-22T10:25:20+07:00</updated>
             <summary>
@@ -283,6 +286,7 @@
         <link href="https://notfullyet.com/hanh-trinh-cung-con.html"/>
         <id>https://notfullyet.com/hanh-trinh-cung-con.html</id>
         <media:content url="https://notfullyet.com/media/posts/1/20250722_2214_Unwavering-Support-Journey_simple_compose_01k0sb4v1yfa99gwsgv1dj8nav.png" medium="image" />
+            <category term="Đồng hành"/>
 
         <updated>2025-07-16T00:16:58+07:00</updated>
             <summary>
