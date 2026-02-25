@@ -3,7 +3,7 @@
     <title>NFY ♪♫♬♭♯♩♮♫♪°</title>
     <link href="https://notfullyet.com/feed.xml" rel="self" />
     <link href="https://notfullyet.com" />
-    <updated>2026-02-22T14:01:07+07:00</updated>
+    <updated>2026-02-25T19:19:24+07:00</updated>
     <author>
         <name>thehill137</name>
     </author>
@@ -41,7 +41,6 @@
 <p><em><strong>2.1. Website tĩnh và Website có server:</strong></em></p>
 <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Trước khi đụng vào code, bạn cần hiểu một khái niệm nền tảng. Có 2 loại website:</p>
 <ul>
-<li> </li>
 <li class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Website tĩnh (static)</strong> — giống như một tờ giấy in sẵn. Bạn viết HTML, đưa lên mạng, ai mở cũng thấy giống nhau. Nó không "nhớ" được gì cả. Nếu người A nhập tên trên điện thoại, người B trên máy tính không thấy được.</li>
 <li class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Website có server (dynamic)</strong> — giống như có một "người quản lý" ngồi phía sau. Khi người A gửi tên lên, server nhận, lưu lại, rồi gửi cho người B xem. Đây là loại chúng ta cần.</li>
 </ul>
@@ -209,6 +208,8 @@
 <figure class="post__image"><img loading="lazy"  src="https://notfullyet.com/media/posts/8//Screenshot-2026-02-22-at-10.30.50.png" alt="" width="1060" height="1214" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-xs.png 640w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-sm.png 768w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-md.png 1024w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-lg.png 1366w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-xl.png 1600w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.30.50-2xl.png 1920w"></figure>
 <p>Trang Admin sau khi đăng nhập:</p>
 <figure class="post__image"><img loading="lazy"  src="https://notfullyet.com/media/posts/8//Screenshot-2026-02-22-at-10.28.55.png" alt="" width="878" height="891" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-xs.png 640w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-sm.png 768w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-md.png 1024w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-lg.png 1366w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-xl.png 1600w ,https://notfullyet.com/media/posts/8//responsive/Screenshot-2026-02-22-at-10.28.55-2xl.png 1920w"></figure>
+<p>Kết quả sau khi quay số trúng thưởng:</p>
+<figure class="post__image"><img loading="lazy"  src="https://notfullyet.com/media/posts/8/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d.jpg" alt="" width="1764" height="1786" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-xs.jpg 640w ,https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-sm.jpg 768w ,https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-md.jpg 1024w ,https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-lg.jpg 1366w ,https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-xl.jpg 1600w ,https://notfullyet.com/media/posts/8/responsive/z7558885203113_a1185be47230d2c573a00f2b9aaffb7d-2xl.jpg 1920w"></figure>
 <p>Bước 6: Mật khẩu trang Admin</p>
 <p>Ban đầu thì mình ko để password gì đâu, nhưng chung quy lại thì cũng nên vì đám đệ bên dưới nó rành công nghệ hơn mình 10X lần, nên thôi cũng tập tành thì tập cho trọn bộ. Trang admin có màn hình đăng nhập để không ai truy cập trái phép.</p>
 <h3 class="text-text-100 mt-2 -mb-1 text-base font-bold">Mật khẩu mặc định</h3>
