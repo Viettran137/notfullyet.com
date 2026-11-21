@@ -3,12 +3,253 @@
     <title>NFY ♪♫♬♭♯♩♮♫♪°</title>
     <link href="https://notfullyet.com/feed.xml" rel="self" />
     <link href="https://notfullyet.com" />
-    <updated>2026-02-25T19:19:24+07:00</updated>
+    <updated>2026-07-25T21:34:04+07:00</updated>
     <author>
         <name>thehill137</name>
     </author>
     <id>https://notfullyet.com</id>
 
+    <entry>
+        <title>Ngày tôi mất trắng dữ liệu của mình</title>
+        <author>
+            <name>thehill137</name>
+        </author>
+        <link href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html"/>
+        <id>https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html</id>
+        <media:content url="https://notfullyet.com/media/posts/9/Gemini_Generated_Image_fgbznjfgbznjfgbz.png" medium="image" />
+            <category term="Data &amp; Tech"/>
+
+        <updated>2026-07-25T21:29:22+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://notfullyet.com/media/posts/9/Gemini_Generated_Image_fgbznjfgbznjfgbz.png" alt="" />
+                    Tự truyện của một người mới tập code, dựng app bằng AI - và cái giá của một dòng lệnh tưởng như vô hại. Sáng đó tôi mở app quản lý chi tiêu như mọi ngày. Nhưng màn hình trắng trơn. Không một giao dịch.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://notfullyet.com/media/posts/9/Gemini_Generated_Image_fgbznjfgbznjfgbz.png" class="type:primaryImage" alt="" /></p>
+                <p><em>Tự truyện của một người mới tập code, dựng app bằng AI - và cái giá của một dòng lệnh tưởng như vô hại.</em></p>
+<p>Sáng đó tôi mở app quản lý chi tiêu như mọi ngày. Nhưng màn hình trắng trơn. Không một giao dịch. Không một con số. Bốn tháng ghi chép từng ly cà phê, từng đồng gửi vợ, từng khoản đầu tư...<em> toàn bộ</em> <em>biến mất</em>. Tôi bấm reload. Vẫn trống. Tôi đăng nhập lại. Vẫn trống. Và cái cảm giác lạnh gáy dâng lên: <strong>hình như tôi vừa mất tất cả.</strong></p>
+<p>Tôi viết bài này không phải để khoe một dự án hay ho. Ngược lại - để kể về ngày tệ nhất trong hành trình học code của mình, mổ xẻ tận gốc vì sao nó xảy ra, và để lại một tấm bản đồ cho bất kỳ ai đang <em>vibe code</em> giống tôi: dựng app bằng AI, chạy được là mừng, mà không hề biết dưới lớp băng mỏng ấy là một cái hố sâu.</p>
+<p><em>Mỗi một sai lầm đều là một kinh nghiệm quý báu. Nhưng có những kinh nghiệm, tôi ước gì mình học được mà không phải trả bằng dữ liệu thật.</em></p>
+<h1><strong>1. Tôi là ai, và app của tôi là gì</strong></h1>
+<p>Tôi không phải lập trình viên. Tôi là người làm nghề khác, tự học, và mê cái cảm giác biến ý tưởng trong đầu thành thứ chạm được. Công cụ của tôi là AI: tôi mô tả điều mình muốn, AI viết code, tôi copy, dán, deploy. Người ta gọi nó là <em>vibe coding</em> - code theo cảm hứng, theo dòng chảy, ít khi dừng lại hỏi “nếu hỏng thì sao?”.</p>
+<p>Đứa con tinh thần của tôi tên <strong>FinTrack</strong> - một app quản lý tài chính cá nhân. Nó đẹp, nó nhanh, cài được lên màn hình chính như app thật. Tôi còn tự hào làm hẳn một <em>Shortcut</em> trên iPhone để mỗi lần tiêu tiền là ghi vào trong ba giây. Bốn tháng trời, nó thành cuốn sổ cái của đời tôi.</p>
+<p>Dữ liệu ư? Tôi lưu trên <strong>Firebase</strong> - “đám mây của Google”. Và đây là niềm tin ngây thơ đầu tiên của tôi:</p>
+<p><em>“Đã lưu lên Firebase rồi thì chắc chắn an toàn. Cloud mà. Google mà. Kiểu gì chẳng có lịch sử, chẳng có backup.”</em></p>
+<p>Tôi đã sai. Sai một cách cơ bản đến mức, khi hiểu ra, tôi vừa xấu hổ vừa biết ơn.</p>
+<h1><strong>2. Ngày mọi thứ sụp đổ</strong></h1>
+<p>Bối cảnh: vài hôm trước đó, tôi (và AI) đổi cách đăng nhập của app - từ “đăng nhập bằng Google” sang “đăng nhập bằng tài khoản/mật khẩu”, vì cái nút Google cứ lỗi hoài. Nghe rất hợp lý. Code chạy ngon. Tôi vui vẻ deploy và quên nó đi.</p>
+<p>Tôi không biết rằng mình vừa châm ngòi cho một quả bom hẹn giờ.</p>
+<table style="height: 363.437px;" width="624">
+<tbody>
+<tr style="height: 77.3594px;">
+<td style="height: 77.3594px;" width="147">
+<p><strong>20/07</strong></p>
+</td>
+<td style="height: 77.3594px;" width="477">
+<p>Đổi đăng nhập Google → mật khẩu. Mọi thứ “có vẻ” ổn.</p>
+</td>
+</tr>
+<tr style="height: 104.359px;">
+<td style="height: 104.359px;" width="147">
+<p><strong>~10:18 25/07</strong></p>
+</td>
+<td style="height: 104.359px;" width="477">
+<p>Một thiết bị mở app lúc bộ nhớ đang rỗng → app tự ghi trạng thái rỗng đè lên cloud.</p>
+</td>
+</tr>
+<tr style="height: 77.3594px;">
+<td style="height: 77.3594px;" width="147">
+<p><strong>Trưa 25/07</strong></p>
+</td>
+<td style="height: 77.3594px;" width="477">
+<p>Tôi mở app. Trống trơn. Bốn tháng dữ liệu bốc hơi.</p>
+</td>
+</tr>
+<tr style="height: 104.359px;">
+<td style="height: 104.359px;" width="147">
+<p><strong>Sau đó</strong></p>
+</td>
+<td style="height: 104.359px;" width="477">
+<p>Đào bới, mới biết: Firebase <em>không</em> có “thùng rác”, cũng chẳng có lịch sử để tua lại.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Phản xạ đầu tiên của tôi rất… con người: <em>“Không sao, đã có Firebase, chắc chắn lấy lại được history.”</em> Tôi mở Firebase Console lên, tự tin. Và rồi tôi hiểu ra sự thật.</p>
+<h1><strong>3. Sự thật phũ phàng: vì sao Firebase “xoá” dữ liệu của tôi</strong></h1>
+<p>Đây là phần tôi muốn bạn đọc kỹ nhất, vì nó là kiến thức mà đáng lẽ tôi phải biết <em>trước</em> khi viết dòng code đầu tiên.</p>
+<h2><strong>3.1 Firestore là database sống, không phải cỗ máy lưu lịch sử</strong></h2>
+<p>Firestore (database của Firebase) chỉ giữ <strong>giá trị hiện tại</strong> của mỗi tài liệu. Khi code ghi dữ liệu bằng lệnh setDoc(doc, data), nó <strong>ghi đè toàn bộ</strong> - như xoá sạch bảng rồi viết lại. Không có “undo”, không có “thùng rác”, không có bản trước đó nào được giữ lại tự động.</p>
+<p>Toàn bộ sổ cái của tôi nằm gọn trong <em>một</em> tài liệu duy nhất: users/{uid}/data/main, chứa một mảng txs với tất cả giao dịch. Một lần ghi đè sai là mất sạch. Không phải mất một dòng - mất <em>cả cuốn sổ</em>.</p>
+<h2><strong>3.2 Cái bug thật sự: “lưu trước khi tải” (race condition)</strong></h2>
+<p>Đây là trái tim của thảm hoạ. App của tôi hoạt động thế này:</p>
+<ul>
+<li>Khi mở lên, nó lấy dữ liệu từ bộ nhớ máy (localStorage) làm trạng thái ban đầu - trên máy mới, cái này <strong>rỗng</strong>.</li>
+<li>Khi đăng nhập, nó <em>đồng thời</em> làm hai việc: (a) bắt đầu tải dữ liệu thật từ cloud về (mất chút thời gian vì qua mạng), và (b) tự động lưu trạng thái hiện tại lên cloud.</li>
+</ul>
+<p>Bạn thấy vấn đề chưa? Việc (b) chạy <strong>trước</strong> việc (a) kịp xong. App hí hửng lưu cái trạng thái <em>rỗng</em> lên cloud - <strong>đè chết</strong> 209 giao dịch thật - rồi một giây sau dữ liệu thật mới về tới nơi, nhưng đã quá muộn. Trên cloud chỉ còn con số 0.</p>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p>// Trái tim của thảm hoạ - rút gọn:</p>
+<p>useEffect(() =&gt; {</p>
+<p>  // Chạy mỗi khi `state` hoặc `user` đổi.</p>
+<p>  // Khi vừa đăng nhập, `user` đổi → effect chạy NGAY,</p>
+<p>  // với `state` vẫn là dữ liệu LOCAL (có thể RỖNG)...</p>
+<p>  saveToCloud(user.uid, state)   // ⟵ ghi đè cloud bằng rỗng 💥</p>
+<p>}, [state, user])</p>
+<p>// ...trong khi subscribeToCloud() còn đang tải dữ liệu thật về.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p><strong>Noted:</strong></p>
+<p>Giống như bạn về nhà, chưa kịp nhìn xem trong tủ lạnh có gì, đã vội chép cái danh sách “tủ lạnh trống” của mình đè lên tờ giấy dán tủ. Một giây sau mở tủ ra thấy đầy đồ ăn - nhưng tờ giấy đã ghi “trống” và bạn vừa gửi nó cho cả nhà.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>3.3 “Đã link Firebase” không có nghĩa là “có backup”</strong></h2>
+<p>Firebase <em>có</em> cơ chế lịch sử và backup thật. Nhưng chúng <strong>tắt sẵn</strong>, và phần lớn cần gói trả phí. Cụ thể, khi tôi kiểm tra project của mình:</p>
+<ul>
+<li><strong>PITR</strong> (khôi phục theo thời điểm) chỉ bật mặc định <strong>1 giờ</strong>. Lúc tôi phát hiện thì đã hơn 1 giờ trôi qua kể từ khi bị ghi rỗng → không tua lại được.</li>
+<li><strong>Backup theo lịch</strong>: <strong>không có cái nào</strong>. Chưa từng ai bật.</li>
+</ul>
+<p>Nói cách khác: “history” mà tôi đinh ninh là có sẵn - thực ra <strong>chưa bao giờ tồn tại</strong>. Tôi đã lái xe bốn tháng trời mà không hề có dây an toàn, chỉ vì xe trông rất xịn.</p>
+<h1><strong>4. Những sai lầm của tôi (tôi xin nhận hết)</strong></h1>
+<p>Bug là của code. Nhưng thảm hoạ là của <em>tôi</em>. Đây là những chỗ tôi đã sai, viết ra để bạn khỏi giẫm lại:</p>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p><strong>Năm sai lầm khiến một cái bug nhỏ thành thảm hoạ</strong></p>
+<p><strong>1. Tin tuyệt đối vào một chỗ duy nhất.</strong> Toàn bộ trứng bỏ vào một giỏ tên là “cloud”, không một bản sao nào khác. Không CSV, không Google Sheet, không gì cả.</p>
+<p><strong>2. Vibe code mà không hỏi “nếu…thì sao?”.</strong> Code chạy được trên kịch bản đẹp là tôi dùng. Tôi chưa bao giờ hỏi: <em>nếu bộ nhớ rỗng thì sao? nếu mạng chậm thì sao? nếu mở trên hai máy thì sao?</em> Chính những câu hỏi đó mới là nghề.</p>
+<p><strong>3. Đổi thứ mình không hiểu.</strong> Đổi đăng nhập Google → mật khẩu nghe đơn giản, nhưng nó đổi luôn <em>uid</em> - cái “chìa khoá” trỏ tới dữ liệu. Tôi không hiểu hệ quả, chỉ thấy “chạy ngon”.</p>
+<p><strong>4. Sửa lớn mà không backup trước.</strong> Trước mỗi thay đổi động tới dữ liệu, đáng lẽ phải xuất một bản sao. Tôi thì không.</p>
+<p><strong>5. Không test kịch bản xấu.</strong> Tôi chỉ test “thêm giao dịch → thấy nó hiện ra”. Tôi chưa bao giờ test “đăng nhập trên máy trống → dữ liệu cũ có còn không”.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>5. AI đã giúp tôi nhưng AI không phải thần thánh</strong></h1>
+<p>Tôi sẽ thành thật, vì đây mới là bài học lớn nhất. AI dựng app cho tôi nhanh đến kinh ngạc. Nó giỏi. Nhưng cái race condition chết người kia - <strong>cả tôi và AI đều không nghĩ ra ngay từ đầu.</strong> Nó nằm im đó suốt nhiều tháng, cho tới ngày đủ điều kiện để phát nổ.</p>
+<p>Khi tôi hoảng loạn đi tìm nguyên nhân, AI đã cùng tôi mổ xẻ, tìm ra gốc rễ, vá lỗi, và dựng lại hệ thống backup. Nhưng nó không thể <em>hoàn tác</em> quá khứ. Không ai có thể.</p>
+<p><em>AI là người đồng hành cực giỏi, không phải tấm lưới an toàn. Nó viết code trong vài giây; còn trách nhiệm với dữ liệu của chính mình thì không ai code hộ được.</em></p>
+<p>Vibe coding không sai. Cái sai là vibe code rồi <em>giao phó số phận</em> cho thứ mình không hiểu. AI cho tôi đôi cánh; nhưng biết mình đang bay trên vực nào - đó là việc tôi phải tự học.</p>
+<h1><strong>6. Chúng tôi đã cứu được gì</strong></h1>
+<p>Cloud thì hết cứu: không backup, PITR đã quá hạn. Nhưng còn một tia hy vọng - bộ nhớ trình duyệt. Trình duyệt lưu localStorage trong những file nho nhỏ (LevelDB), và khi một giá trị bị ghi đè, giá trị cũ <em>đôi khi</em> vẫn còn nằm đó cho tới khi bị dọn.</p>
+<p>Chúng tôi đào vào tận file LevelDB của Chrome, giải nén từng khối dữ liệu (đúng nghĩa đen là viết lại thuật toán giải nén Snappy bằng tay vì máy không có mạng để cài thư viện), và… tìm thấy một mảnh: <strong>36 giao dịch của tháng 4</strong>. Không phải tất cả. Nhưng là một phần của chính tôi, được kéo về từ đống tro.</p>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p><strong>✓ Một mảnh ký ức được cứu</strong></p>
+<p>36 giao dịch (01/04 → 12/04) + 6 danh mục tự tạo. Cảm giác lúc con số ấy hiện ra trên màn hình - vừa nhẹ nhõm, vừa xót xa. Nó nhắc tôi: dữ liệu không phải mấy con số vô hồn, nó là <em>đời sống</em> của mình.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>7.  Hướng khắc phục chi tiết - để bạn không phải khóc như tôi</strong></h1>
+<p>Đây là phần quà tôi để lại. Nếu bạn cũng đang vibe code một app có dữ liệu, hãy làm theo. Chia làm hai tầng: <strong>sửa code</strong> và <strong>dựng backup</strong>.</p>
+<h2><strong>A. Sửa code - nguyên tắc vàng</strong></h2>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p><strong>★ Quy tắc bất biến</strong></p>
+<p><strong>KHÔNG BAO GIỜ ghi đè cả tài liệu bằng một trạng thái chưa được xác thực.</strong> Đặc biệt: đừng bao giờ để trạng thái <em>rỗng</em> đè lên dữ liệu <em>tốt</em>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong> Tải xong rồi mới cho phép lưu (cổng “hydrate”).</strong> Chỉ được ghi lên cloud <em>sau khi</em> đã nhận dữ liệu cloud lần đầu.</li>
+</ol>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p>const cloudHydrated = useRef(false)</p>
+<p>// Nghe cloud:</p>
+<p>subscribeToCloud(uid, (cloudData) =&gt; {</p>
+<p>  if (!cloudHydrated.current) {</p>
+<p>    // snapshot ĐẦU TIÊN: hoà dữ liệu an toàn</p>
+<p>    if (hasData(cloudData))      adopt(cloudData)        // cloud có → nạp về</p>
+<p>    else if (hasData(local))     saveToCloud(uid, local) // cloud rỗng, máy có → KHÔI PHỤC</p>
+<p>    cloudHydrated.current = true</p>
+<p>    return</p>
+<p>  }</p>
+<p>  adopt(cloudData) // các lần sau: cập nhật realtime</p>
+<p>})</p>
+<p>// Effect lưu:</p>
+<p>useEffect(() =&gt; {</p>
+<p>  if (!user) return</p>
+<p>  if (!cloudHydrated.current) return  // ⟵ chưa tải xong thì CẤM lưu</p>
+<p>  saveToCloud(user.uid, state)</p>
+<p>}, [state, user])</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong> Đừng nhét cả cuốn sổ vào một tài liệu.</strong> Thay vì một mảng khổng lồ trong data/main, hãy lưu <strong>mỗi giao dịch là một document riêng</strong>: users/{uid}/txs/{id}. Khi đó một lần ghi lỗi chỉ ảnh hưởng <em>một</em> giao dịch - không thể xoá sạch cả sổ. Đây là thay đổi cấu trúc quan trọng nhất về lâu dài.</li>
+<li><strong> Test kịch bản xấu.</strong> Trước khi deploy, tự hỏi và thử: máy trống đăng nhập vào thì sao? mất mạng giữa chừng thì sao? hai thiết bị cùng sửa thì sao?</li>
+</ol>
+<h2><strong>B. Dựng backup - luôn có ≥ 1 bản sao độc lập</strong></h2>
+<p>Đây là những gì tôi đã bật ngay sau sự cố (cần gói Blaze của Firebase - chi phí gần như bằng 0 với dữ liệu nhỏ):</p>
+<ol>
+<li><strong> </strong><strong>Bật PITR 7 ngày</strong></li>
+</ol>
+<p>Firebase Console → Firestore → cho phép Point-in-time recovery. Từ giờ có thể “tua ngược” database về bất kỳ lúc nào trong 7 ngày.</p>
+<ol start="2">
+<li><strong> </strong><strong>Bật backup theo lịch</strong></li>
+</ol>
+<p>Đặt lịch backup <em>hằng ngày</em> (giữ 14 ngày) và <em>hằng tuần</em> (giữ 12 tuần). Khôi phục chỉ bằng một lệnh.</p>
+<ol start="3">
+<li><strong> </strong><strong>Xuất sang BigQuery (append-only)</strong></li>
+</ol>
+<p>Cài extension <em>“Stream Firestore to BigQuery”</em>. Mỗi thay đổi được ghi <em>thêm</em> một dòng vào BigQuery - không bao giờ ghi đè. Kể cả cloud bị xoá, mọi phiên bản cũ vẫn còn nguyên để trích xuất lại. Đây chính là “lịch sử vĩnh viễn” mà tôi tưởng mình đã có sẵn.</p>
+<ol start="4">
+<li><strong> </strong><strong>Một bản sao “con người đọc được”</strong></li>
+</ol>
+<p>Cho app tự xuất CSV/JSON định kỳ, hoặc để Shortcut ghi thêm mỗi giao dịch vào một Google Sheet. Một cuốn sổ nằm ngoài hệ thống, phòng khi cả hệ thống hỏng.</p>
+<p> </p>
+<table width="624">
+<tbody>
+<tr>
+<td width="624">
+<p><strong>✓ Checklist trước khi deploy bất kỳ app có dữ liệu nào</strong></p>
+<p>✓   Có ít nhất <strong>một</strong> bản backup độc lập với app (và mình đã thử khôi phục nó thật)</p>
+<p>✓   Code không bao giờ ghi đè cả tài liệu bằng trạng thái rỗng/chưa tải xong</p>
+<p>✓   Đã test: máy trống đăng nhập, mất mạng, hai thiết bị</p>
+<p>✓   Backup <em>trước</em> mỗi thay đổi động tới dữ liệu hoặc cách đăng nhập</p>
+<p>✓   Bật PITR + backup lịch (nếu dùng Firebase/Firestore)</p>
+<p>✓   Dữ liệu quan trọng: mỗi bản ghi một document, đừng gom vào một mảng</p>
+<p>✓   Mỗi tháng kiểm tra backup có thật sự đang chạy không</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>8. Kết: mỗi sai lầm là một kinh nghiệm quý</strong></h1>
+<p>Tôi mất phần lớn bốn tháng dữ liệu. Điều đó thật sự đau. Nhưng nếu bạn hỏi tôi có hối hận vì đã vibe code không, câu trả lời là <em>không</em>. Tôi hối hận vì đã vibe code một cách <strong>vô tư</strong> - tin mà không hiểu, xây mà không phòng.</p>
+<p>Giờ thì app của tôi có ba tầng backup độc lập, có cổng chặn ghi đè, có lịch sử vĩnh viễn trong BigQuery. Cái bug đã được vá. Và quan trọng hơn cả code: <em>tôi</em> đã được vá. Tôi không còn nhìn “cloud” như một phép màu, mà như một công cụ - mạnh mẽ, nhưng chỉ an toàn khi mình hiểu nó.</p>
+<p><em>Không sợ sai. Chỉ sợ sai mà không rút ra được gì. Dữ liệu thì tôi mất rồi - nhưng bài học này, tôi sẽ giữ mãi.</em></p>
+<p>Nếu bạn đang dựng thứ gì đó bằng AI, và một góc nào đó trong đầu đang thì thầm <em>“chắc không sao đâu”</em> - hãy dừng lại một phút. Bật cái backup đó lên. Hỏi cái câu “nếu…thì sao?” đó đi. Làm điều mà tôi đã không làm.</p>
+<p>Vì mỗi một sai lầm đều là một kinh nghiệm quý báu - nhưng những kinh nghiệm quý nhất, là những cái ta học được từ sai lầm của người khác, mà không phải tự mình trả giá.</p>
+<p><em>- Một người vẫn đang tập code, và sẽ còn code tiếp.</em></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Mini Game - Quay số trúng thưởng</title>
         <author>
