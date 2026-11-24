@@ -3,7 +3,7 @@
     <title>NFY ♪♫♬♭♯♩♮♫♪°</title>
     <link href="https://notfullyet.com/feed.xml" rel="self" />
     <link href="https://notfullyet.com" />
-    <updated>2026-11-24T11:34:21+07:00</updated>
+    <updated>2026-11-24T11:55:50+07:00</updated>
     <author>
         <name>thehill137</name>
     </author>
@@ -639,19 +639,26 @@
             <summary>
                 <![CDATA[
                         <img src="https://notfullyet.com/media/posts/23/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.jpg" alt="" />
-                    .content:has(.sl){overflow:clip} .sl{--bg:#121A14;--surface:#1A241C;--ink:#EEF2EA;--text:#C9D3C4;--mut:#8D9A88;--line:#2C3A2E;--acc:#9BC26B;--acc2:#E3B34C; --sans:"IBM Plex Sans",system-ui,sans-serif;--serif:"Literata",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.75,.25,1); position:relative;left:50%;width:100vw;margin:0 0 0 -50vw;background:var(--bg);color:var(--text);font-family:var(--serif); -webkit-font-smoothing:antialiased;line-height:1.72;font-size:18px;text-align:left;color-scheme:dark} .sl *,.sl *::before,.sl *::after{box-sizing:border-box} .sl h1,.sl h2,.sl h3,.sl p,.sl figure,.sl blockquote,.sl ol,.sl ul,.sl li,.sl pre{margin:0;padding:0} .sl h1,.sl h2,.sl h3{font-family:var(--sans);color:var(--ink);text-wrap:balance;text-transform:none;letter-spacing:-.01em} .sl p{text-wrap:pretty} .sl a{color:inherit!important;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(155,194,107,.5);text-underline-offset:3px;transition:text-decoration-color .2s} .sl a:hover{text-decoration-color:var(--acc)} .sl figcaption{text-align:left;font-style:normal;padding:0;clear:none} .sl button{height:auto;min-height:0;width:auto;margin:0;line-height:1.25;text-transform:none;letter-spacing:0;box-shadow:none;font-family:var(--sans);background:none;color:inherit} .sl ol,.sl ul{list-style:none}.sl&hellip;
+                    <div><p>Ngày 25/7, ứng dụng FinTrack của tôi ghi một sổ trống lên đám mây và đè mất 209 giao dịch. Bốn tháng sau, đây là sáu lớp sao lưu tôi đã dựng lại từ đầu, kèm prompt bạn chép về dùng được ngay.</p>
+
+
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://notfullyet.com/media/posts/23/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.jpg" class="type:primaryImage" alt="" /></p>
-                <div>
+                <div><p>Ngày 25/7, ứng dụng FinTrack của tôi ghi một sổ trống lên đám mây và đè mất 209 giao dịch. Bốn tháng sau, đây là sáu lớp sao lưu tôi đã dựng lại từ đầu, kèm prompt bạn chép về dùng được ngay.</p>
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap&subset=vietnamese">
+
 <style>
+html:has(.sl){overflow-x:clip}
 .content:has(.sl){overflow:clip}
 .sl{--bg:#121A14;--surface:#1A241C;--ink:#EEF2EA;--text:#C9D3C4;--mut:#8D9A88;--line:#2C3A2E;--acc:#9BC26B;--acc2:#E3B34C;
-  --sans:"IBM Plex Sans",system-ui,sans-serif;--serif:"Literata",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.75,.25,1);
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--serif:"Literata",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.75,.25,1);--sl-top:0px;
   position:relative;left:50%;width:100vw;margin:0 0 0 -50vw;background:var(--bg);color:var(--text);font-family:var(--serif);
   -webkit-font-smoothing:antialiased;line-height:1.72;font-size:18px;text-align:left;color-scheme:dark}
 .sl *,.sl *::before,.sl *::after{box-sizing:border-box}
@@ -731,7 +738,7 @@
 /* ---------- B3: cuộn kể chuyện ---------- */
 .sl .sl-scrolly-h{max-width:37rem}
 .sl .sl-scrolly{display:grid;grid-template-columns:minmax(0,55fr) minmax(0,45fr);gap:56px;margin-top:48px;position:relative}
-.sl .sl-stage{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:28px 0}
+.sl .sl-stage{position:sticky;top:var(--sl-top);height:100vh;display:flex;flex-direction:column;justify-content:center;padding:28px 0}
 .sl .sl-stage-in{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px 14px}
 .sl .sl-stage-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font:500 12.5px/1.4 var(--mono);color:var(--mut);letter-spacing:.04em;margin-bottom:8px}
 .sl .sl-stage-h b{color:var(--acc);font-weight:500}
@@ -1386,8 +1393,7 @@ Hướng dẫn tôi từng bước cách dán code và cài đặt lịch chạy
   });
 })();
 </script>
-</article>
-</div>
+</article></div>
             ]]>
         </content>
     </entry>
