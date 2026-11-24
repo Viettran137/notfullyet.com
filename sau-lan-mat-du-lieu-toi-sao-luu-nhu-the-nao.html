@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sau lần mất trắng dữ liệu, giờ tôi sao lưu như thế nào</title><meta name="description" content="Bốn tháng sau khi FinTrack mất 209 giao dịch, tôi dựng ba tầng sao lưu: PITR 7 ngày, bản sao hằng ngày và hằng tuần, BigQuery. Kèm prompt dùng ngay."><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://notfullyet.com/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.html"><link rel="alternate" type="application/atom+xml" href="https://notfullyet.com/feed.xml" title="NFY ♪♫♬♭♯♩♮♫♪° - RSS"><link rel="alternate" type="application/json" href="https://notfullyet.com/feed.json" title="NFY ♪♫♬♭♯♩♮♫♪° - JSON"><meta property="og:title" content="Sao lưu dữ liệu"><meta property="og:image" content="https://notfullyet.com/media/posts/23/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.jpg"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="900"><meta property="og:site_name" content="NFY ♪♫♬♭♯♩♮♫♪°"><meta property="og:description" content="Bốn tháng sau khi FinTrack mất 209 giao dịch, tôi dựng ba tầng sao lưu: PITR 7 ngày, bản sao hằng ngày và hằng tuần, BigQuery. Kèm prompt dùng ngay."><meta property="og:url" content="https://notfullyet.com/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://notfullyet.com/assets/css/style.css?v=11bee19e86e8eda2cf9a60efd975666d"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://notfullyet.com/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.html"},"headline":"Sao lưu dữ liệu","datePublished":"2026-11-24T11:30+07:00","dateModified":"2026-11-24T11:30+07:00","image":{"@type":"ImageObject","url":"https://notfullyet.com/media/posts/23/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.jpg","height":900,"width":1600},"description":"Bốn tháng sau khi FinTrack mất 209 giao dịch, tôi dựng ba tầng sao lưu: PITR 7 ngày, bản sao hằng ngày và hằng tuần, BigQuery. Kèm prompt dùng ngay.","author":{"@type":"Person","name":"thehill137","url":"https://notfullyet.com/authors/viet-tran/"},"publisher":{"@type":"Organization","name":"thehill137","logo":{"@type":"ImageObject","url":"https://notfullyet.com/media/website/NFY-Logo.png","height":1024,"width":1024}}}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W3V4FRPK');</script></head><body class="post-template"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3V4FRPK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="top js-header"><a class="logo" href="https://notfullyet.com/"><img src="https://notfullyet.com/media/website/NFY-Logo.png" alt="NFY ♪♫♬♭♯♩♮♫♪°" width="1024" height="1024"></a><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://notfullyet.com/tags/kien-thuc/" title="Kiến thức" target="_self">Kiến thức</a></li><li><a href="https://notfullyet.com/tags/dong-hanh/" target="_self">Đồng Hành</a></li><li><a href="https://notfullyet.com/lich-su.html" target="_self">Lịch sử</a></li><li><a href="https://notfullyet.com/tags/du-lieu-cong-nghe/" target="_self">Data &amp; Tech</a></li></ul></nav></header><main class="post"><article class="content"><div class="hero"><header class="hero__content"><div class="wrapper"><h1>Sao lưu dữ liệu</h1><div class="feed__meta content__meta"><a href="https://notfullyet.com/authors/viet-tran/" class="feed__author">thehill137</a> <time datetime="2026-11-24T11:30" class="feed__date">tháng 11 24, 2026</time></div></div></header><figure class="hero__image"><div class="hero__image-wrapper"><img src="https://notfullyet.com/media/posts/23/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao.jpg" srcset="https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-xs.jpg 640w, https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-sm.jpg 768w, https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-md.jpg 1024w, https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-lg.jpg 1366w, https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-xl.jpg 1600w, https://notfullyet.com/media/posts/23/responsive/sau-lan-mat-du-lieu-toi-sao-luu-nhu-the-nao-2xl.jpg 1920w" sizes="88vw" loading="eager" height="900" width="1600" alt=""></div></figure></div><div class="entry-wrapper content__entry"><div><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap&subset=vietnamese"><style>.content:has(.sl){overflow:clip}
+.sl{--bg:#121A14;--surface:#1A241C;--ink:#EEF2EA;--text:#C9D3C4;--mut:#8D9A88;--line:#2C3A2E;--acc:#9BC26B;--acc2:#E3B34C;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--serif:"Literata",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.75,.25,1);
+  position:relative;left:50%;width:100vw;margin:0 0 0 -50vw;background:var(--bg);color:var(--text);font-family:var(--serif);
+  -webkit-font-smoothing:antialiased;line-height:1.72;font-size:18px;text-align:left;color-scheme:dark}
+.sl *,.sl *::before,.sl *::after{box-sizing:border-box}
+.sl h1,.sl h2,.sl h3,.sl p,.sl figure,.sl blockquote,.sl ol,.sl ul,.sl li,.sl pre{margin:0;padding:0}
+.sl h1,.sl h2,.sl h3{font-family:var(--sans);color:var(--ink);text-wrap:balance;text-transform:none;letter-spacing:-.01em}
+.sl p{text-wrap:pretty}
+.sl a{color:inherit!important;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(155,194,107,.5);text-underline-offset:3px;transition:text-decoration-color .2s}
+.sl a:hover{text-decoration-color:var(--acc)}
+.sl figcaption{text-align:left;font-style:normal;padding:0;clear:none}
+.sl button{height:auto;min-height:0;width:auto;margin:0;line-height:1.25;text-transform:none;letter-spacing:0;box-shadow:none;font-family:var(--sans);background:none;color:inherit}
+.sl ol,.sl ul{list-style:none}.sl li::before{content:none}
+.sl code{font:500 .84em var(--mono);background:rgba(155,194,107,.1);color:var(--ink);padding:1px 5px;border-radius:3px}
+.sl ::selection{background:rgba(155,194,107,.35);color:var(--ink)}
+.sl :focus-visible{outline:2px solid var(--acc2);outline-offset:3px}
+
+.sl .sl-w{max-width:1240px;margin:0 auto;padding:0 32px}
+.sl .sl-col{max-width:37rem}
+.sl .sl-sec{padding:88px 0 0}
+.sl .sl-num{display:block;font:500 13px/1 var(--mono);color:var(--acc);letter-spacing:.06em;margin-bottom:14px}
+.sl .sl-sec h2{font-size:clamp(28px,3.3vw,40px);line-height:1.15;font-weight:600;margin-bottom:26px}
+.sl .sl-col p + p{margin-top:1.05em}
+.sl .sl-col > * + .sl-pr,.sl .sl-col > .sl-pr + p{margin-top:28px}
+.sl .sl-lead{font-style:italic;font-size:21px;line-height:1.55;color:var(--ink)}
+
+/* ---------- Hero: đồng hồ ---------- */
+.sl .sl-hero{padding:76px 0 80px;border-bottom:1px solid var(--line)}
+.sl .sl-hero .sl-w{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:64px;align-items:center}
+.sl .sl-kick{font:500 13px/1.4 var(--mono);color:var(--acc);letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px}
+.sl .sl-hero h1{font-size:clamp(38px,5.2vw,68px);line-height:1.04;font-weight:600;letter-spacing:-.025em}
+.sl .sl-dek{font-size:20px;line-height:1.6;margin-top:26px;max-width:32rem;color:var(--text)}
+.sl .sl-by{font:400 14px/1.5 var(--sans);color:var(--mut);margin-top:26px}
+.sl .sl-clock{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:26px 28px 22px;font-family:var(--mono)}
+.sl .sl-clock-h{display:flex;justify-content:space-between;gap:12px;font:500 12px/1.4 var(--mono);color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.sl .sl-clock-h b{color:var(--acc2);font-weight:500}
+.sl .sl-dig{display:block;font:500 clamp(54px,6.6vw,92px)/1 var(--mono);color:var(--acc2);font-variant-numeric:tabular-nums;letter-spacing:-.04em;margin:18px 0 14px;white-space:nowrap}
+.sl .sl-clock.done .sl-dig{color:var(--mut)}
+.sl .sl-bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.sl .sl-bar i{display:block;height:100%;width:100%;background:var(--acc2);transform-origin:left}
+.sl .sl-bar.g i{background:var(--acc)}
+.sl .sl-ev{font:500 14px/1.5 var(--mono);color:var(--ink);margin-top:14px}
+.sl .sl-ev span{color:var(--mut)}.sl .sl-ev .nw{color:inherit;white-space:nowrap}
+.sl .sl-state{font:400 14.5px/1.5 var(--sans);color:var(--text);margin-top:6px;min-height:2.9em}
+.sl .sl-now{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+.sl .sl-now .sl-clock-h b{color:var(--acc)}
+.sl .sl-dig2{display:block;font:500 clamp(30px,3.3vw,42px)/1 var(--mono);color:var(--acc);font-variant-numeric:tabular-nums;letter-spacing:-.03em;margin:12px 0 12px}
+.sl .sl-clock-f{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;font:400 12.5px/1.4 var(--sans);color:var(--mut)}
+.sl .sl-replay{font:500 13px var(--sans);color:var(--ink);border:1px solid var(--line);padding:7px 12px;border-radius:3px;cursor:pointer}
+.sl .sl-replay:hover{border-color:var(--acc)}
+.sl .sl-replay[hidden]{display:none}
+
+/* ---------- Ảnh ---------- */
+.sl .sl-fig{margin:40px 0 0}
+.sl .sl-fig img{display:block;width:100%;height:auto;border-radius:3px;background:var(--surface)}
+.sl .sl-fig figcaption,.sl .sl-cap{font:400 13.5px/1.55 var(--sans);color:var(--mut);margin-top:10px}
+
+/* ---------- 3-2-1 ---------- */
+.sl .sl-321{display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;border-top:1px solid var(--acc)}
+.sl .sl-321 div{padding:16px 20px 0 0}
+.sl .sl-321 div + div{padding-left:20px;border-left:1px solid var(--line)}
+.sl .sl-321 b{display:block;font:600 46px/1 var(--sans);color:var(--acc)}
+.sl .sl-321 span{display:block;font:400 15px/1.5 var(--sans);margin-top:8px;color:var(--text)}
+.sl .sl-q{margin:34px 0 0;padding:4px 0 4px 22px;border-left:2px solid var(--acc2)}
+.sl .sl-q p{font:400 17px/1.6 var(--sans);color:var(--ink)}
+.sl .sl-q cite{display:block;font:400 13.5px/1.5 var(--sans);color:var(--mut);font-style:normal;margin-top:8px}
+
+/* ---------- Prompt ---------- */
+.sl .sl-pr{border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden}
+.sl .sl-pr-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px 10px 18px;border-bottom:1px solid var(--line);font:500 12px/1.4 var(--mono);color:var(--acc);letter-spacing:.05em;text-transform:uppercase}
+.sl .sl-copy{display:none;font:500 13px/1 var(--sans);color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:8px 12px;cursor:pointer;text-transform:none;letter-spacing:0;white-space:nowrap;transition:border-color .15s,color .15s}
+.sl.js .sl-copy{display:inline-block}
+.sl .sl-copy:hover{border-color:var(--acc)}
+.sl .sl-copy.ok{color:var(--bg);background:var(--acc);border-color:var(--acc)}
+.sl .sl-pr pre{font:400 14.5px/1.7 var(--mono);color:var(--ink);white-space:pre-wrap;word-break:break-word;padding:16px 18px 18px;background:none;border:0;margin:0;overflow:visible}
+.sl .sl-cmd pre{color:var(--text);font-size:13.5px}
+.sl .sl-cmd pre b{color:var(--acc);font-weight:500}
+
+/* ---------- B3: cuộn kể chuyện ---------- */
+.sl .sl-scrolly-h{max-width:37rem}
+.sl .sl-scrolly{display:grid;grid-template-columns:minmax(0,55fr) minmax(0,45fr);gap:56px;margin-top:48px;position:relative}
+.sl .sl-stage{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:28px 0}
+.sl .sl-stage-in{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px 14px}
+.sl .sl-stage-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font:500 12.5px/1.4 var(--mono);color:var(--mut);letter-spacing:.04em;margin-bottom:8px}
+.sl .sl-stage-h b{color:var(--acc);font-weight:500}
+.sl .sl-g{display:block;width:100%;height:auto;max-height:calc(100vh - 200px);margin:0 auto}
+.sl .sl-g text{font-family:var(--sans)}
+.sl .sl-g .t1{fill:var(--ink);font-size:17px;font-weight:600}
+.sl .sl-g .t2{fill:var(--text);font-size:13.5px}
+.sl .sl-g .t3{fill:var(--mut);font-size:12.5px}
+.sl .sl-g .tm{font-family:var(--mono);fill:var(--mut);font-size:12px}
+.sl .sl-g .ta{fill:var(--acc)}
+.sl .sl-g .bd{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 6}
+.sl .sl-g .bdl{fill:var(--mut);font:500 11.5px var(--mono);letter-spacing:.08em}
+.sl .sl-g .k{fill:var(--bg);stroke:var(--mut);stroke-width:1.5;transition:stroke .3s}
+.sl .sl-g .k.sug{stroke-dasharray:5 4}
+.sl .sl-g .tk{fill:var(--acc);opacity:.55}
+.sl .sl-g .tk2{fill:var(--acc2);opacity:.75}
+.sl .sl-g .ar{fill:none;stroke:var(--mut);stroke-width:1.5}
+.sl .sl-g .pill{fill:none;stroke:var(--acc2);stroke-width:1}
+.sl .sl-g .pt{fill:var(--acc2);font:500 11px var(--mono)}
+.sl .sl-g .L{transition:opacity .45s var(--ease)}
+.sl .sl-g .L.cur .k{stroke:var(--acc)}
+.sl .sl-g .L.cur .tk{opacity:.95}
+.sl.js .sl-g .L{opacity:.1}
+.sl.js .sl-g .L.on{opacity:.8}
+.sl.js .sl-g .L.cur{opacity:1}
+.sl .sl-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:400 12.5px/1.4 var(--sans);color:var(--mut);margin-top:8px}
+.sl .sl-legend i{display:inline-block;width:22px;height:0;border-top:1.5px solid var(--mut);vertical-align:middle;margin-right:7px}
+.sl .sl-legend i.d{border-top-style:dashed}
+.sl .sl-steps{padding:16vh 0 30vh}
+.sl .sl-step{padding:26px 0 26px 22px;border-left:2px solid var(--line);margin-bottom:34vh;transition:border-color .3s}
+.sl .sl-step:last-child{margin-bottom:0}
+.sl .sl-step.cur{border-left-color:var(--acc)}
+.sl .sl-step .sl-num{margin-bottom:10px}
+.sl .sl-step h3{font-size:24px;line-height:1.25;font-weight:600;margin-bottom:14px}
+.sl .sl-step p{font-size:17px;line-height:1.7}
+.sl .sl-step p + p{margin-top:.9em}
+.sl .sl-step .sl-tag{display:inline-block;font:500 11.5px/1.4 var(--mono);color:var(--acc2);border:1px solid var(--acc2);border-radius:2px;padding:2px 7px;letter-spacing:.04em;margin-bottom:12px}
+.sl .sl-step .sl-cmd{margin-top:16px}
+.sl .sl-mini{display:none}
+
+/* ---------- T6: thanh trượt ---------- */
+.sl .sl-tool{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:30px 32px 30px}
+.sl .sl-read{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px;align-items:end}
+.sl .sl-read-l span{display:block;font:500 12.5px/1.4 var(--mono);color:var(--mut);letter-spacing:.05em;text-transform:uppercase}
+.sl .sl-read-l output{display:block;font:500 clamp(36px,4.4vw,54px)/1.05 var(--mono);color:var(--ink);letter-spacing:-.03em;margin-top:8px}
+.sl .sl-verdict{font:400 16px/1.55 var(--sans);color:var(--text)}
+.sl .sl-verdict b{color:var(--ink);font-weight:600}
+.sl .sl-range{margin-top:26px}
+.sl .sl-range[hidden]{display:none}
+.sl .sl-range input{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;margin:0;display:block}
+.sl .sl-range input::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:2px}
+.sl .sl-range input::-moz-range-track{height:4px;background:var(--line);border-radius:2px}
+.sl .sl-range input::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--acc2);border:3px solid var(--bg);margin-top:-9px;box-shadow:0 0 0 1px var(--acc2)}
+.sl .sl-range input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--acc2);border:3px solid var(--bg)}
+.sl .sl-range input:focus-visible{outline:2px solid var(--acc2);outline-offset:4px}
+.sl .sl-ticks{position:relative;height:20px;margin:4px 11px 0;font:400 11.5px/1 var(--mono);color:var(--mut)}
+.sl .sl-ticks span{position:absolute;top:4px;transform:translateX(-50%);white-space:nowrap}
+.sl .sl-ticks span:first-child{transform:none}
+.sl .sl-ticks span:last-child{transform:translateX(-100%)}
+.sl .sl-grp{margin-top:30px}
+.sl .sl-grp h3{font:500 12.5px/1.4 var(--mono);color:var(--mut);letter-spacing:.06em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sl .sl-row{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr) 8.5rem;gap:8px 20px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.sl .sl-row b{display:block;font:600 15.5px/1.35 var(--sans);color:var(--ink)}
+.sl .sl-row small{display:block;font:400 12.5px/1.4 var(--mono);color:var(--mut);margin-top:2px}
+.sl .sl-trk{position:relative;height:10px;background:rgba(141,154,136,.14);border-radius:5px}
+.sl .sl-trk i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--acc);opacity:.35}
+.sl .sl-trk s{position:absolute;top:-6px;bottom:-6px;width:2px;margin-left:-1px;background:var(--acc2);text-decoration:none;transition:left .25s var(--ease)}
+.sl .sl-row.ok .sl-trk i{opacity:.9}
+.sl .sl-chip{font:600 12.5px/1.3 var(--sans);text-align:right;color:var(--mut)}
+.sl .sl-row.ok .sl-chip{color:var(--acc)}
+.sl .sl-row.best .sl-chip::before{content:"→ ";color:var(--acc2)}
+.sl .sl-row p{grid-column:1 / -1;font:400 14.5px/1.55 var(--sans);color:var(--mut);margin-top:-2px}
+.sl .sl-row.ok p{color:var(--text)}
+.sl .sl-old .sl-trk i{background:var(--acc2)}
+.sl .sl-tool-note{font:400 13.5px/1.55 var(--sans);color:var(--mut);margin-top:18px}
+
+/* ---------- Ví dụ giả định ---------- */
+.sl .sl-hyp{margin-top:30px;border:1px dashed var(--acc2);border-radius:6px;padding:20px 22px}
+.sl .sl-hyp b{display:block;font:500 12px/1.4 var(--mono);color:var(--acc2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.sl .sl-hyp p{font-size:16.5px;line-height:1.65}
+
+/* ---------- Checklist ---------- */
+.sl .sl-check{margin-top:30px;counter-reset:c}
+.sl .sl-check li{counter-increment:c;position:relative;padding:14px 0 14px 52px;border-top:1px solid var(--line);font:400 16.5px/1.5 var(--sans);color:var(--text)}
+.sl .sl-check li:last-child{border-bottom:1px solid var(--line)}
+.sl .sl-check li::before{content:counter(c,decimal-leading-zero)!important;position:absolute;left:0;top:15px;font:500 14px/1.4 var(--mono);color:var(--acc)}
+.sl .sl-check li b{color:var(--ink);font-weight:600}
+
+/* ---------- Kết ---------- */
+.sl .sl-end{font-size:clamp(22px,2.6vw,29px);line-height:1.45;font-style:italic;color:var(--ink);margin-top:44px;max-width:34rem}
+.sl .sl-sign{font:400 15px/1.5 var(--sans);color:var(--mut);margin-top:18px}
+
+/* ---------- Nguồn ---------- */
+.sl .sl-src{border-top:1px solid var(--line);margin-top:96px;padding:56px 0 76px;font-family:var(--sans)}
+.sl .sl-src h2{font:500 13px/1.4 var(--mono);color:var(--acc);letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+.sl .sl-src ol{columns:2;column-gap:44px;counter-reset:s}
+.sl .sl-src li{break-inside:avoid;font-size:14px;line-height:1.5;padding:0 0 10px 28px;position:relative;counter-increment:s;color:var(--text)}
+.sl .sl-src li::before{content:counter(s)!important;position:absolute;left:0;top:1px;font:400 12px var(--mono);color:var(--mut)}
+.sl .sl-notes{margin-top:26px;max-width:48rem;font-size:13.5px;line-height:1.65;color:var(--mut)}
+.sl .sl-notes p + p{margin-top:8px}
+.sl .sl-notes b{color:var(--text);font-weight:600}
+
+@media (max-width:860px){
+  .sl{font-size:17.5px}
+  .sl .sl-w{padding:0 22px}
+  .sl .sl-hero{padding:48px 0 56px}
+  .sl .sl-hero .sl-w{grid-template-columns:minmax(0,1fr);gap:36px}
+  .sl .sl-sec{padding-top:68px}
+  .sl .sl-scrolly{grid-template-columns:minmax(0,1fr);gap:0;margin-top:32px}
+  .sl .sl-stage{position:static;height:auto;padding:0 0 12px}
+  .sl .sl-g{max-height:none}
+  .sl.js .sl-stage{display:none}
+  .sl .sl-steps{padding:0}
+  .sl .sl-step{margin-bottom:0;padding:28px 0 30px 0;border-left:0;border-top:1px solid var(--line)}
+  .sl .sl-step.cur{border-left-color:transparent}
+  .sl.js .sl-mini{display:block;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 12px 8px;margin:0 0 18px}
+  .sl.js .sl-mini .sl-g .L{transition:none}
+  .sl.js .sl-mini{padding:8px 4px 4px;margin-left:-6px;margin-right:-6px}.sl.js .sl-mini .t3,.sl.js .sl-mini .tm,.sl.js .sl-mini .pt,.sl.js .sl-mini .bdl{display:none}.sl.js .sl-mini .t1{font-size:19px}.sl.js .sl-mini .t2{font-size:15px}
+  .sl .sl-read{grid-template-columns:minmax(0,1fr);gap:12px}
+  .sl .sl-row{grid-template-columns:minmax(0,1fr) auto}
+  .sl .sl-trk{grid-column:1 / -1;grid-row:2}
+  .sl .sl-chip{grid-row:1;grid-column:2}
+  .sl .sl-src ol{columns:1}
+}
+@media (max-width:480px){
+  .sl{font-size:17px}
+  .sl .sl-w{padding:0 16px}
+  .sl .sl-hero h1{font-size:36px}
+  .sl .sl-dek{font-size:18px}
+  .sl .sl-clock{padding:20px 18px 18px}
+  .sl .sl-clock-h{font-size:11px}
+  .sl .sl-dig{font-size:56px}
+  .sl .sl-321{grid-template-columns:1fr;border-top:0}
+  .sl .sl-321 div,.sl .sl-321 div + div{padding:14px 0;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline}
+  .sl .sl-321 b{font-size:34px}.sl .sl-321 span{margin-top:0}
+  .sl .sl-tool{padding:22px 16px;margin-left:-4px;margin-right:-4px}
+  .sl .sl-ticks span:nth-child(2),.sl .sl-ticks span:nth-child(4){display:none}
+  .sl .sl-pr pre{font-size:13.5px;padding:14px 14px 16px}
+  .sl .sl-pr-h{padding-left:14px}
+  .sl .sl-step h3{font-size:22px}
+  .sl .sl-lead{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sl *,.sl *::before,.sl *::after{transition:none!important;animation:none!important}
+}</style><article class="sl" id="sl"><header class="sl-hero"><div class="sl-w"><div><p class="sl-kick">Data &amp; Tech · Bốn tháng sau sự cố</p><h1>Sau lần mất trắng dữ liệu, giờ tôi sao lưu như thế nào</h1><p class="sl-dek">Một giờ. Đó là khoảng thời gian Firestore cho tôi quay lại hôm 25/7, và tôi đã để nó trôi qua mà không biết. Đây là những gì tôi dựng lên sau đó, từng lớp một, kèm prompt bạn chép về dùng được.</p><p class="sl-by">Viết ngày 24/11/2026 · khoảng 12 phút đọc</p></div><figure class="sl-clock" id="sl-clock" aria-labelledby="sl-clock-cap"><div class="sl-clock-h"><span>Firestore · cửa sổ PITR</span><b>Mặc định</b></div><span class="sl-dig" id="sl-dig" aria-hidden="true">01:00:00</span><div class="sl-bar" aria-hidden="true"><i id="sl-bar1"></i></div><p class="sl-ev"><span class="nw">25/7/2026</span> <span>·</span> <span class="nw">khoảng 10:18</span> <span>·</span> <span class="nw">209 giao dịch</span></p><p class="sl-state" id="sl-state" aria-live="polite">Khi tính năng khôi phục theo thời điểm (PITR) chưa bật, Firestore chỉ cho đọc lại dữ liệu của 1 giờ vừa qua.</p><div class="sl-now"><div class="sl-clock-h"><span>Cấu hình bây giờ</span><b>PITR đã bật</b></div><span class="sl-dig2" id="sl-dig2" aria-hidden="true">168:00:00</span><div class="sl-bar g" aria-hidden="true"><i id="sl-bar2"></i></div></div><figcaption class="sl-clock-f"><span id="sl-clock-cap">Hai đồng hồ chạy cùng tốc độ, nhanh gấp 360 lần thật. Một giờ so với bảy ngày.</span><button type="button" class="sl-replay" id="sl-replay" hidden>Chạy lại</button></figcaption></figure></div></header><section class="sl-sec"><div class="sl-w"><div class="sl-col"><p class="sl-lead">Sao lưu là việc chán nhất trong mọi dự án. Cho tới đúng cái ngày bạn cần nó.</p><p>Ngày 25/7 năm nay, khoảng 10:18 sáng, ứng dụng tài chính cá nhân FinTrack của tôi ghi một sổ trống lên đám mây, đè mất 209 giao dịch. Tôi kể chi tiết trong bài <a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html">Ngày tôi mất trắng dữ liệu của mình</a>. Lúc phát hiện ra thì cửa sổ một giờ mà Firestore giữ sẵn đã đóng. Tôi cứu được 36 giao dịch từ 01 đến 12/4 và 6 danh mục. Phần còn lại mất hẳn.</p><p>Viết xong bài đó, tôi tự hỏi mình một câu: vậy giờ sao lưu thế nào? Lúc ấy tôi chưa có câu trả lời. Tôi biết là cần, nhưng chưa có cách nào ra hồn.</p><p>Bốn tháng sau thì có. Người làm nghề nhìn vào chắc sẽ thấy còn thô. Nhưng nó vừa sức một người tay ngang với vài ứng dụng vibe code, và tôi hiểu từng bước của nó, điều mà trước 25/7 tôi không nói được.</p><p>Bài này dành cho bạn nếu bạn đang có một app nhỏ, một bảng tính quan trọng hay một dự án AI làm giúp, và chưa từng nghĩ tới chuyện nếu nó biến mất thì sao.</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h1"><div class="sl-w"><div class="sl-col"><span class="sl-num">01</span><h2 id="sl-h1">Biết dữ liệu của mình nằm ở đâu</h2><p>Nghe buồn cười, nhưng trước sự cố tôi không trả lời chắc được câu này. Tôi biết dữ liệu FinTrack nằm trên Firebase. Còn nằm theo cấu trúc nào, bản nào là bản thật, máy có giữ bản riêng không, thì chịu. Tôi cũng không biết dữ liệu được cất theo mã người dùng (uid), nên hôm 20/7 đổi cách đăng nhập từ Google sang email và mật khẩu, uid đổi theo mà tôi không hiểu chuyện đó kéo theo những gì.</p><p>Việc đầu tiên sau sự cố là ngồi với AI hỏi cho ra lẽ. Prompt gần như nguyên văn:</p><div class="sl-pr"><div class="sl-pr-h"><span>Prompt 1 · Bản đồ dữ liệu</span><button type="button" class="sl-copy" data-for="sl-p1" aria-label="Sao chép prompt 1">Sao chép</button></div><pre id="sl-p1">Tôi không biết code. Đây là toàn bộ code ứng dụng của tôi. Hãy giải thích cho tôi bằng lời đơn giản:
+1. Dữ liệu người dùng được lưu ở những chỗ nào (trên máy, trên mạng, trong file).
+2. Mỗi chỗ lưu những loại dữ liệu gì.
+3. Những đoạn code nào có thể ghi đè hoặc xóa dữ liệu, và trong trường hợp nào.
+4. Nếu mất dữ liệu ở một chỗ, có lấy lại được từ chỗ khác không.
+Đừng sửa gì cả, chỉ giải thích.</pre></div><p>Câu cuối quan trọng. Không dặn thì AI rất hay tiện tay sửa luôn những chỗ nó thấy chưa ổn, và bạn sẽ không biết nó đã đụng vào đâu.</p><p>Kết quả là một bản đồ dữ liệu. Nhìn vào đó, tôi thấy rõ chỗ đã giết dữ liệu của mình. Khi app khởi động, một <code>useEffect</code> theo dõi <code>[state, user]</code> gọi <code>saveToCloud</code> trước khi <code>subscribeToCloud</code> kịp tải dữ liệu thật về. Trạng thái lúc đó còn rỗng. Lệnh <code>setDoc</code> lấy cái rỗng ấy ghi đè lên cả cuốn sổ, vì cả sổ nằm trong một document duy nhất.</p><p>Với các dự án khác, tôi hỏi y như vậy. Game học cho con gần như không có dữ liệu cần giữ. Mini game quay số có danh sách người chơi, quan trọng trong vài ngày. FinTrack thì quan trọng thật. Mức sao lưu mỗi dự án một khác, nhưng dự án nào cũng nên trả lời được câu "dữ liệu nằm ở đâu".</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h2"><div class="sl-w"><div class="sl-col"><span class="sl-num">02</span><h2 id="sl-h2">Ba bản, hai loại nơi, một bản ra khỏi nhà</h2><p>Trong lúc tìm hiểu, tôi gặp một quy tắc mà dân làm hệ thống hay nhắc: quy tắc 3-2-1. Nó được nhiếp ảnh gia Peter Krogh phổ biến trong cuốn The DAM Book, sách về quản lý kho ảnh số. Năm 2012, Đại học Carnegie Mellon soạn một tài liệu cho US-CERT, cơ quan ứng cứu sự cố máy tính của Mỹ, và trích lại quy tắc này.</p><div class="sl-321" role="list"><div role="listitem"><b>3</b><span>bản của mỗi file quan trọng: một bản chính, hai bản sao lưu</span></div><div role="listitem"><b>2</b><span>loại phương tiện lưu trữ khác nhau, để một kiểu hỏng không cuốn cả hai</span></div><div role="listitem"><b>1</b><span>bản để ở nơi khác hẳn, ngoài nhà hay ngoài văn phòng</span></div></div><blockquote class="sl-q"><p>"Saving just one backup file may not be enough to safeguard your information."</p><cite>US-CERT, Data Backup Options (Carnegie Mellon University, 2012)</cite></blockquote><p>Đọc xong, tôi đem ba tầng sao lưu mình đang có ra soi. Kết quả hơi chột dạ: cả ba đều nằm trong nhà Google. Cùng một tài khoản, cùng một dự án Google Cloud. Nếu tài khoản đó bị khóa hay bị chiếm, cả ba đi cùng nhau. Theo 3-2-1, tôi đủ số bản nhưng còn thiếu một bản ra khỏi nhà.</p><figure class="sl-fig"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/DVD%2C_USB_flash_drive_and_external_hard_drive.jpg/1280px-DVD%2C_USB_flash_drive_and_external_hard_drive.jpg" alt="Một đĩa DVD trong hộp nhựa, một thẻ nhớ USB và một ổ cứng ngoài màu đỏ đặt trên mặt bàn trắng" width="1280" height="831" loading="lazy" decoding="async" data-is-external-image="true"><figcaption>Ba kiểu phương tiện lưu trữ ngoài: đĩa quang, thẻ nhớ, ổ cứng. Chữ "2" trong quy tắc 3-2-1 nói về chuyện này. Ảnh: Santeri Viinamäki, <a href="https://commons.wikimedia.org/wiki/File:DVD,_USB_flash_drive_and_external_hard_drive.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.</figcaption></figure></div></div></section><section class="sl-sec" aria-labelledby="sl-h3"><div class="sl-w"><div class="sl-scrolly-h"><span class="sl-num">03</span><h2 id="sl-h3">Dựng từng lớp, từ trong ra ngoài</h2><p>Cuộn xuống, hình bên cạnh sẽ dựng dần từng lớp. Nét liền là cấu hình FinTrack đang chạy thật. Nét đứt là lớp tôi khuyên bạn thêm, chưa phải chuyện của tôi.</p></div><div class="sl-scrolly" id="sl-scrolly"><figure class="sl-stage" aria-label="Sơ đồ các lớp sao lưu"><div class="sl-stage-in"><div class="sl-stage-h"><b id="sl-stage-n">Lớp 1/6</b><span id="sl-stage-t">Dữ liệu đang chạy</span></div><svg class="sl-g" id="sl-g" viewBox="0 0 480 572" role="img" aria-labelledby="sl-g-title"><title id="sl-g-title">Sơ đồ sáu lớp: Firestore và PITR, file JSON, bản sao hằng ngày, bản sao hằng tuần, BigQuery và CSV, ổ cứng ngoài. Bốn lớp đầu nằm trong khung "nhà Google", file JSON và ổ cứng nằm ngoài.</title><text class="bdl" x="22" y="20">TRONG NHÀ GOOGLE · MỘT TÀI KHOẢN</text><rect class="bd" x="8" y="30" width="464" height="402" rx="12"/><g class="L" data-l="0"><path class="k" d="M28 64 v122 a92 14 0 0 0 184 0 v-122"/><ellipse class="k" cx="120" cy="64" rx="92" ry="14"/><text class="t1" x="120" y="102" text-anchor="middle">Firestore</text><text class="t3" x="120" y="121" text-anchor="middle">dữ liệu đang chạy</text><g class="tk"><rect x="52" y="136" width="16" height="20" rx="2"/><rect x="76" y="136" width="16" height="20" rx="2"/><rect x="100" y="136" width="16" height="20" rx="2"/><rect x="124" y="136" width="16" height="20" rx="2"/><rect x="148" y="136" width="16" height="20" rx="2"/><rect x="172" y="136" width="16" height="20" rx="2"/><rect x="52" y="162" width="16" height="20" rx="2"/><rect x="76" y="162" width="16" height="20" rx="2"/><rect x="100" y="162" width="16" height="20" rx="2"/><rect x="124" y="162" width="16" height="20" rx="2"/><rect x="148" y="162" width="16" height="20" rx="2"/><rect x="172" y="162" width="16" height="20" rx="2"/></g><text class="t3" x="120" y="222" text-anchor="middle">mỗi giao dịch một document</text><text class="tm ta" x="28" y="250">PITR · tua lại 7 ngày</text><g class="tk2"><rect x="28" y="258" width="24" height="12" rx="2"/><rect x="54" y="258" width="24" height="12" rx="2"/><rect x="80" y="258" width="24" height="12" rx="2"/><rect x="106" y="258" width="24" height="12" rx="2"/><rect x="132" y="258" width="24" height="12" rx="2"/><rect x="158" y="258" width="24" height="12" rx="2"/><rect x="184" y="258" width="24" height="12" rx="2"/></g></g><g class="L" data-l="1"><path class="k sug" d="M40 470 h44 l16 16 v62 h-60 z"/><path class="k sug" d="M84 470 v16 h16"/><text class="tm ta" x="70" y="526" text-anchor="middle" style="font-size:15px">{ }</text><text class="t1" x="116" y="488">File JSON</text><text class="t2" x="116" y="508">nút Xuất và Nhập</text><text class="t3" x="116" y="526">nằm trên máy bạn</text><rect class="pill" x="116" y="538" width="72" height="18" rx="2"/><text class="pt" x="152" y="551" text-anchor="middle">lớp gợi ý</text></g><g class="L" data-l="2"><path class="ar" d="M214 90 h30 m-6 -5 l6 5 l-6 5"/><text class="t1" x="252" y="64">Hằng ngày</text><text class="tm" x="456" y="64" text-anchor="end">giữ 14 ngày</text><g class="tk"><rect x="252" y="76" width="12" height="30" rx="2"/><rect x="266.6" y="76" width="12" height="30" rx="2"/><rect x="281.2" y="76" width="12" height="30" rx="2"/><rect x="295.8" y="76" width="12" height="30" rx="2"/><rect x="310.4" y="76" width="12" height="30" rx="2"/><rect x="325" y="76" width="12" height="30" rx="2"/><rect x="339.6" y="76" width="12" height="30" rx="2"/><rect x="354.2" y="76" width="12" height="30" rx="2"/><rect x="368.8" y="76" width="12" height="30" rx="2"/><rect x="383.4" y="76" width="12" height="30" rx="2"/><rect x="398" y="76" width="12" height="30" rx="2"/><rect x="412.6" y="76" width="12" height="30" rx="2"/><rect x="427.2" y="76" width="12" height="30" rx="2"/><rect x="441.8" y="76" width="12" height="30" rx="2"/></g><text class="t3" x="252" y="126">bản sao theo lịch, 1 bản mỗi ngày</text></g><g class="L" data-l="3"><path class="ar" d="M214 190 h30 m-6 -5 l6 5 l-6 5"/><text class="t1" x="252" y="164">Hằng tuần</text><text class="tm" x="456" y="164" text-anchor="end">giữ 12 tuần</text><g class="tk"><rect x="252" y="176" width="14" height="30" rx="2"/><rect x="269" y="176" width="14" height="30" rx="2"/><rect x="286" y="176" width="14" height="30" rx="2"/><rect x="303" y="176" width="14" height="30" rx="2"/><rect x="320" y="176" width="14" height="30" rx="2"/><rect x="337" y="176" width="14" height="30" rx="2"/><rect x="354" y="176" width="14" height="30" rx="2"/><rect x="371" y="176" width="14" height="30" rx="2"/><rect x="388" y="176" width="14" height="30" rx="2"/><rect x="405" y="176" width="14" height="30" rx="2"/><rect x="422" y="176" width="14" height="30" rx="2"/><rect x="439" y="176" width="14" height="30" rx="2"/></g><text class="t3" x="252" y="226">1 bản mỗi tuần, chọn thứ trong tuần</text></g><g class="L" data-l="4"><path class="ar" d="M120 276 v18 m-5 -6 l5 6 l5 -6"/><rect class="k" x="28" y="300" width="428" height="118" rx="8"/><text class="t1" x="44" y="326" style="font-size:16px">BigQuery · chỉ ghi nối</text><text class="tm" x="44" y="352">10:02 CREATE tx_0412</text><text class="tm" x="44" y="370">10:05 UPDATE tx_0388</text><text class="tm" x="44" y="388">10:09 DELETE tx_0127</text><text class="tm" x="44" y="406">mọi thay đổi đều giữ lại</text><rect class="k" x="356" y="320" width="80" height="62" rx="3"/><path class="ar" d="M356 340 h80 M356 361 h80 M383 320 v62 M410 320 v62" style="stroke-width:1"/><text class="t3" x="396" y="404" text-anchor="middle">CSV / Sheet</text></g><g class="L" data-l="5"><path class="ar" d="M396 420 v26 h-102 v18 m-5 -6 l5 6 l5 -6"/><rect class="k sug" x="258" y="470" width="64" height="88" rx="10"/><circle cx="290" cy="540" r="4" class="tk2"/><text class="t1" x="338" y="488">Ổ cứng ngoài</text><text class="t2" x="338" y="508">chép CSV định kỳ</text><text class="t3" x="338" y="526">ngoài mọi tài khoản</text><rect class="pill" x="338" y="538" width="72" height="18" rx="2"/><text class="pt" x="374" y="551" text-anchor="middle">lớp gợi ý</text></g><text class="bdl" x="22" y="456">NGOÀI NHÀ GOOGLE</text></svg><div class="sl-legend"><span><i></i>cấu hình đang chạy</span><span><i class="d"></i>lớp gợi ý</span><span>dòng BigQuery là minh họa</span></div></div></figure><div class="sl-steps" id="sl-steps"><div class="sl-step" data-step="0" data-t="Dữ liệu đang chạy"><span class="sl-num">Lớp 1/6</span><h3>Dữ liệu đang chạy, và chiếc máy tua lại 7 ngày</h3><p>Lớp trong cùng là chính dữ liệu thật trên Firestore. Sau sự cố, tôi nhờ AI đổi cấu trúc: mỗi giao dịch là một document riêng, thay vì cả cuốn sổ nhét chung một document. Lỡ có lệnh ghi sai, nó chỉ làm hỏng một giao dịch, không quét sạch cả sổ như hôm 25/7.</p><p>Rồi tôi bật PITR, tính năng khôi phục về một thời điểm. Khi tắt, Firestore chỉ cho đọc lại 1 giờ vừa qua. Khi bật, dữ liệu trong cửa sổ được giữ 7 ngày, đọc lại được tới từng phút. Cách bật trong Google Cloud console: vào Databases, chọn database, mở Disaster Recovery, bấm Edit, tích ô Enable point-in-time recovery rồi Save.</p><p>Hai điều tài liệu ghi mà tôi suýt bỏ qua. Dự án phải bật thanh toán, và PITR tốn thêm phí lưu trữ. Bật xong cũng chưa tua được ngay 7 ngày: tuần đầu, mốc xa nhất chỉ là 1 giờ trước lúc bật.</p></div><div class="sl-step" data-step="1" data-t="Nút xuất JSON"><span class="sl-num">Lớp 2/6</span> <span class="sl-tag">Lớp gợi ý</span><h3>Một nút xuất toàn bộ dữ liệu ra file</h3><p>Đây là lớp tôi khuyên bạn thêm đầu tiên, vì nó rẻ nhất: một nút trong phần Cài đặt, bấm là tải về một file JSON chứa hết dữ liệu. Có nó, bạn luôn có cách đem dữ liệu ra khỏi app, bất kể đám mây có chuyện gì.</p><p>Nút nhập lại quan trọng không kém. Một file sao lưu không có đường khôi phục thì chỉ nằm đó cho yên tâm. Prompt mẫu cho cả hai nút, cùng một cổng chặn ghi rỗng, nằm ở cuối phần này.</p></div><div class="sl-step" data-step="2" data-t="Bản sao hằng ngày"><span class="sl-num">Lớp 3/6</span><h3>Mỗi ngày một bản, giữ 14 ngày</h3><p>Firestore có sẵn sao lưu theo lịch. Mỗi database được một lịch hằng ngày và một lịch hằng tuần. Hạn giữ tối đa là 14 tuần. Tôi đặt bản hằng ngày giữ 14 ngày.</p><p>Không chọn được giờ chạy, Google tự xếp. Khi khôi phục, dữ liệu được ghi ra một database mới, không đè lên database đang chạy. Tôi thích điểm này: có thể mở bản cũ ra xem trước rồi mới quyết.</p><div class="sl-pr sl-cmd"><div class="sl-pr-h"><span>Lệnh · lịch hằng ngày</span></div><pre>gcloud firestore backups \
+  schedules create \
+  --database='(default)' \
+  --recurrence=<b>daily</b> \
+  --retention=<b>14d</b></pre></div></div><div class="sl-step" data-step="3" data-t="Bản sao hằng tuần"><span class="sl-num">Lớp 4/6</span><h3>Mỗi tuần một bản, giữ 12 tuần</h3><p>Bản hằng ngày chỉ nhìn lại được hai tuần. Có những lỗi âm thầm, như một danh mục bị ghi sai từ tháng trước, phải lâu mới lộ ra. Lịch hằng tuần lo phần đó: chọn một thứ trong tuần, giữ 12 tuần, tức gần ba tháng.</p><p>Một chi tiết nhỏ mà yên lòng: xóa database gốc thì các bản sao lưu không tự mất theo. Chúng nằm đó tới hết hạn giữ.</p><div class="sl-pr sl-cmd"><div class="sl-pr-h"><span>Lệnh · lịch hằng tuần</span></div><pre># THỨ: SUN, MON, TUE ... SAT
+gcloud firestore backups \
+  schedules create \
+  --database='(default)' \
+  --recurrence=<b>weekly</b> \
+  --retention=<b>12w</b> \
+  --day-of-week=<b>THỨ</b></pre></div></div><div class="sl-step" data-step="4" data-t="BigQuery và CSV"><span class="sl-num">Lớp 5/6</span><h3>Một bản chỉ ghi nối, mở ra là đọc được</h3><p>Hai lớp trước là bản chụp nguyên khối. Muốn dùng phải khôi phục cả database. Lớp này khác: extension "Stream Firestore to BigQuery" gửi từng thay đổi sang BigQuery, ghi vào một bảng lịch sử, kèm thời điểm và loại thao tác (tạo, sửa, xóa). Dòng mới chỉ nối thêm vào, không đè dòng cũ. Thêm một bản CSV hoặc Google Sheet để mở ra đọc bằng mắt.</p><p>Hai lưu ý. Extension chỉ ghi những thay đổi từ lúc cài trở đi, dữ liệu cũ phải chạy một script nhập riêng. Và Firebase thông báo dịch vụ Extensions sẽ ngừng ngày 31/3/2027: extension đã cài vẫn chạy, nhưng sau ngày đó không cập nhật hay gỡ qua console được nữa. Cài mới bây giờ thì Firebase khuyên dùng bản "function kit" thay thế.</p></div><div class="sl-step" data-step="5" data-t="Ổ cứng ngoài"><span class="sl-num">Lớp 6/6</span> <span class="sl-tag">Lớp gợi ý · ví dụ</span><h3>Một bản nằm ngoài mọi tài khoản online</h3><p>Năm lớp trên đều phụ thuộc vào một tài khoản Google còn mở được. Lớp cuối là chữ "1" trong 3-2-1. Ví dụ: định kỳ tải bản CSV về, chép vào một ổ cứng ngoài cất trong ngăn kéo. Tài khoản có bị khóa, bị chiếm, hay chính bạn lỡ tay xóa cả thư mục, vẫn còn một bản trong ngăn kéo.</p><p>Bao lâu chép một lần là tùy bạn chịu mất bao nhiêu ngày dữ liệu. Lớp này tôi chưa làm đều đặn, nên ghi rõ là gợi ý.</p></div></div></div></div><div class="sl-w"><div class="sl-col"><p style="margin-top:48px">Ba prompt cho lớp thứ hai. Prompt đầu thêm nút xuất và nhập. Prompt sau là cổng chặn đúng kiểu lỗi đã xảy ra với tôi: một lần ghi đè bằng dữ liệu rỗng.</p><div class="sl-pr" style="margin-top:22px"><div class="sl-pr-h"><span>Prompt 2 · Nút xuất và nhập dữ liệu</span><button type="button" class="sl-copy" data-for="sl-p2" aria-label="Sao chép prompt 2">Sao chép</button></div><pre id="sl-p2">Thêm vào phần Cài đặt một nút "Xuất toàn bộ dữ liệu". Khi bấm, tải về một file JSON chứa toàn bộ giao dịch, danh mục (cả danh mục người dùng tự tạo) và cài đặt của người dùng. Tên file có ngày giờ xuất, ví dụ fintrack-2026-11-20-2130.json.
+Đồng thời thêm nút "Nhập dữ liệu từ file" để khôi phục từ file đó, nhưng trước khi nhập phải hiện cảnh báo và yêu cầu xác nhận.
+Chỉ sửa phần Cài đặt, không đụng vào phần đồng bộ.</pre></div><div class="sl-pr" style="margin-top:18px"><div class="sl-pr-h"><span>Prompt 3 · Cổng chặn ghi rỗng</span><button type="button" class="sl-copy" data-for="sl-p3" aria-label="Sao chép prompt 3">Sao chép</button></div><pre id="sl-p3">Trước khi ứng dụng ghi dữ liệu lên đám mây, hãy kiểm tra: nếu dữ liệu sắp ghi có ít hơn một nửa số giao dịch so với dữ liệu đang có trên đám mây, thì dừng lại, không ghi, và hiện thông báo hỏi người dùng có chắc không.
+Giải thích cho tôi đoạn code bạn thêm vào trước khi áp dụng.</pre></div><p style="margin-top:22px">Cổng này thô. Người làm nghề chắc có cách chuẩn hơn. Nhưng nó nhắm đúng vào cái lỗi đã lấy của tôi 209 giao dịch, và câu "giải thích trước khi áp dụng" bắt AI cho tôi đọc trước khi nó đụng vào phần đồng bộ.</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h4"><div class="sl-w"><div class="sl-col"><span class="sl-num">04</span><h2 id="sl-h4">Kéo thử: dữ liệu hỏng lúc nào?</h2><p>Mỗi tầng chỉ nhìn lại được một quãng. Kéo thanh trượt để chọn lúc dữ liệu bị hỏng, từ 30 phút trước tới 3 tháng trước, rồi xem tầng nào còn cứu được. Hàng trên là FinTrack trước 25/7, hàng dưới là cấu hình bây giờ.</p></div><div class="sl-tool" id="sl-tool"><div class="sl-read"><div class="sl-read-l"><span id="sl-rl">Dữ liệu hỏng cách đây</span><output id="sl-out" for="sl-rng">6 ngày</output></div><p class="sl-verdict" id="sl-verdict" aria-live="polite"><b>Cấu hình cũ:</b> mất trắng. <b>Bây giờ:</b> dùng PITR, tua về đúng phút trước khi hỏng.</p></div><div class="sl-range" id="sl-range" hidden><input type="range" id="sl-rng" min="0" max="14" step="1" value="6" aria-labelledby="sl-rl" aria-valuetext="6 ngày"><div class="sl-ticks" aria-hidden="true"><span style="left:0">30 phút</span><span style="left:21.4%">6 giờ</span><span style="left:35.7%">3 ngày</span><span style="left:64.3%">15 ngày</span><span style="left:100%">3 tháng</span></div></div><div class="sl-grp sl-old"><h3>Trước 25/7</h3><ul><li class="sl-row" data-lim="1"><div><b>Chỉ có PITR mặc định</b><small>1 giờ</small></div><div class="sl-trk"><i style="width:8.6%"></i><s style="left:42.9%"></s></div><span class="sl-chip">Quá hạn</span><p>Cứu được nếu hỏng trong vòng 1 giờ. Hôm 25/7, tôi phát hiện ra khi cửa sổ này đã đóng.</p></li></ul></div><div class="sl-grp"><h3>Bây giờ</h3><ul><li class="sl-row" data-lim="168"><div><b>PITR đã bật</b><small>7 ngày</small></div><div class="sl-trk"><i style="width:46.7%"></i><s style="left:42.9%"></s></div><span class="sl-chip">Cứu được</span><p>Tua về đúng phút trước khi hỏng.</p></li><li class="sl-row" data-lim="312"><div><b>Bản sao hằng ngày</b><small>giữ 14 ngày</small></div><div class="sl-trk"><i style="width:57.1%"></i><s style="left:42.9%"></s></div><span class="sl-chip">Cứu được</span><p>Lấy bản gần nhất trước lúc hỏng, mất tối đa khoảng một ngày dữ liệu cuối.</p></li><li class="sl-row" data-lim="1848"><div><b>Bản sao hằng tuần</b><small>giữ 12 tuần</small></div><div class="sl-trk"><i style="width:92.9%"></i><s style="left:42.9%"></s></div><span class="sl-chip">Cứu được</span><p>Lấy bản tuần gần nhất trước lúc hỏng, mất tối đa khoảng một tuần dữ liệu cuối.</p></li><li class="sl-row" data-lim="0"><div><b>BigQuery và CSV</b><small>không xóa</small></div><div class="sl-trk"><i style="width:100%"></i><s style="left:42.9%"></s></div><span class="sl-chip">Cứu được</span><p>Bảng lịch sử giữ mọi thay đổi, dựng lại được trạng thái trước lúc hỏng. Phải làm tay, chậm hơn.</p></li></ul></div><p class="sl-tool-note">Cách tính: bản sao theo lịch phải còn hạn và được tạo trước lúc hỏng, nên bản hằng ngày dùng được khi hỏng chưa quá khoảng 13 ngày, bản hằng tuần khi chưa quá khoảng 11 tuần. PITR 7 ngày chỉ đủ khi đã bật hơn 7 ngày. BigQuery chỉ có dữ liệu từ lúc cài extension, hoặc từ lúc nhập dữ liệu cũ. Các vạch trên thanh dùng cùng thang với thanh trượt.</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h5"><div class="sl-w"><div class="sl-col"><span class="sl-num">05</span><h2 id="sl-h5">Bảng tính thì nhờ Apps Script</h2><p>Với Google Sheet, có sẵn Google Apps Script để tự động hóa. Tôi không biết viết Apps Script, nên lại nhờ AI. Đây là prompt mẫu, bạn đổi giờ và số bản cho hợp:</p><div class="sl-pr"><div class="sl-pr-h"><span>Prompt 4 · Sao lưu Google Sheet mỗi đêm</span><button type="button" class="sl-copy" data-for="sl-p4" aria-label="Sao chép prompt 4">Sao chép</button></div><pre id="sl-p4">Viết cho tôi một đoạn Google Apps Script để: mỗi đêm vào khoảng 2 giờ sáng, tạo một bản sao của file Google Sheet này, đặt tên kèm ngày, lưu vào thư mục Google Drive tên "Backup".
+Chỉ giữ lại 30 bản gần nhất, bản cũ hơn thì chuyển vào thùng rác, không xóa hẳn.
+Hướng dẫn tôi từng bước cách dán code và cài đặt lịch chạy tự động, giả sử tôi chưa từng mở Apps Script bao giờ.</pre></div><p>Đường đi thường là: mở menu Tiện ích mở rộng, chọn Apps Script, dán code, lưu. Rồi bấm Trình kích hoạt (Triggers) ở cột trái, chọn Thêm trình kích hoạt, đặt loại theo thời gian. Lần đầu chạy, Google sẽ hỏi quyền truy cập Drive. Đọc kỹ danh sách quyền rồi hãy đồng ý.</p><p>Chữ "khoảng" trong prompt là cố ý. Tài liệu của Google ghi rõ giờ chạy có thể xê dịch: đặt 9 giờ thì Apps Script chọn một lúc nào đó giữa 9 và 10 giờ, rồi giữ nguyên lúc đó hằng ngày.</p><p>Câu "chuyển vào thùng rác, không xóa hẳn" cũng cố ý. File trong thùng rác Google Drive bị xóa vĩnh viễn sau 30 ngày. Nếu script lỗi mà dọn nhầm, bạn còn 30 ngày để lấy lại. Người vừa mất dữ liệu thì cẩn thận hơi quá một chút cũng được.</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h6"><div class="sl-w"><div class="sl-col"><span class="sl-num">06</span><h2 id="sl-h6">Thử khôi phục, đừng chỉ sao lưu</h2><p>Có đủ các lớp rồi thì rất dễ thấy mình đã an toàn. Nhưng một bản sao lưu chưa từng khôi phục thử thì chưa biết có dùng được không.</p><p>Firestore làm việc thử này đỡ sợ. Khôi phục từ bản sao theo lịch luôn ghi ra một database mới, database đang chạy không bị đụng tới. Bạn mở database mới ra, đếm số giao dịch, xem danh mục có đủ không, rồi xóa nó đi.</p><p>Danh mục là thứ tôi để ý nhất. Hôm 25/7, ngoài 36 giao dịch, tôi cứu được 6 danh mục, và tôi biết giao dịch mà mất danh mục thì gần như vô nghĩa.</p><div class="sl-hyp"><b>Ví dụ giả định</b><p>Bạn có nút xuất JSON, nhưng nút chỉ xuất giao dịch và danh mục mặc định, bỏ sót danh mục tự tạo. Ngày mất dữ liệu thật, bạn nhập file vào và mọi giao dịch trỏ tới những danh mục không còn tồn tại. Lỗi kiểu này chỉ lộ ra khi thử khôi phục. Vì vậy prompt 2 ở trên có thêm câu "cả danh mục người dùng tự tạo".</p></div><p style="margin-top:28px">Thử bao lâu một lần thì tùy bạn. Mỗi lần đổi cấu trúc dữ liệu, hay mỗi lần thêm tính năng mới có dữ liệu riêng, là một dịp nên thử lại.</p></div></div></section><section class="sl-sec" aria-labelledby="sl-h7"><div class="sl-w"><div class="sl-col"><span class="sl-num">07</span><h2 id="sl-h7">Sáu câu tôi hỏi trước mỗi dự án</h2><p>Cuối cùng, tôi gom hết thành một danh sách ngắn trong ghi chú điện thoại. Mỗi khi bắt đầu một dự án vibe code có dữ liệu thật, tôi đọc lại:</p><ol class="sl-check"><li><b>Dữ liệu nằm ở đâu?</b> Nhờ AI vẽ bản đồ, chỉ giải thích, không sửa.</li><li><b>Có nút xuất toàn bộ dữ liệu ra file chưa?</b> Có nút nhập lại chưa?</li><li><b>Có bản sao tự động ở một chỗ khác chưa?</b> Giữ được bao lâu?</li><li><b>Có bản nào nằm ngoài mọi tài khoản online chưa?</b></li><li><b>Chỗ nào có thể ghi đè hoặc xóa dữ liệu?</b> Đã có cổng chặn chưa?</li><li><b>Lần cuối thử khôi phục là khi nào?</b></li></ol><p style="margin-top:28px">Không câu nào cần biết code. Câu nào cũng nhờ AI làm giúp được, miễn mình biết để hỏi.</p><p>Đó là bài học lớn nhất của bốn tháng qua. AI viết code sao lưu, viết script tự động, thêm cổng chặn, nhanh và khá tốt. Nhưng nó không tự nhắc mình sao lưu khi mình không hỏi. Nó đã không nhắc khi tôi dựng FinTrack, và tôi cũng không biết để hỏi.</p><p>Giờ thì tôi biết. Tôi viết bài này để bạn biết sớm hơn tôi một chút.</p><p class="sl-end">Tối nay, trước khi đi ngủ, mở dự án quan trọng nhất của bạn ra và tự hỏi: nếu sáng mai nó mất, bản sao nằm ở đâu?</p><p class="sl-sign">- Một người đã học sao lưu theo cách đắt nhất.</p></div></div></section><footer class="sl-src"><div class="sl-w"><h2>Nguồn tham khảo</h2><ol><li>Google Cloud, <a href="https://docs.cloud.google.com/firestore/docs/pitr" target="_blank" rel="noopener">Firestore point-in-time recovery (PITR)</a>: tắt thì đọc được 1 giờ, bật thì giữ 7 ngày, độ mịn theo phút.</li><li>Firebase, <a href="https://firebase.google.com/docs/firestore/pitr" target="_blank" rel="noopener">Point-in-time recovery</a>: cùng các con số 1 giờ và 7 ngày.</li><li>Google Cloud, <a href="https://docs.cloud.google.com/firestore/docs/use-pitr" target="_blank" rel="noopener">Work with PITR</a>: cách bật trong console, yêu cầu bật thanh toán, phí lưu trữ.</li><li>Google Cloud, <a href="https://docs.cloud.google.com/firestore/docs/backups" target="_blank" rel="noopener">Back up and restore data (scheduled backups)</a>: một lịch ngày, một lịch tuần, giữ tối đa 14 tuần, khôi phục ra database mới, lệnh gcloud.</li><li>Firebase, <a href="https://firebase.google.com/docs/firestore/backups" target="_blank" rel="noopener">Disaster recovery: scheduled backups</a>: hạn giữ tối đa 14 tuần (14w, 8.467.200 giây).</li><li>Firebase Extensions Hub, <a href="https://extensions.dev/extensions/firebase/firestore-bigquery-export" target="_blank" rel="noopener">Stream Firestore to BigQuery</a>: bảng lịch sử thay đổi, view trạng thái mới nhất, script nhập dữ liệu cũ.</li><li>Firebase, <a href="https://firebase.google.com/docs/extensions/faq-and-troubleshooting" target="_blank" rel="noopener">Extensions FAQ and troubleshooting</a>: dịch vụ Extensions ngừng ngày 31/3/2027, extension đã cài vẫn chạy.</li><li>Google Drive Help, <a href="https://support.google.com/drive/answer/2375102" target="_blank" rel="noopener">Delete files in Google Drive</a>: file trong thùng rác bị xóa vĩnh viễn sau 30 ngày.</li><li>Google Drive Help, <a href="https://support.google.com/drive/answer/1716222" target="_blank" rel="noopener">Recover a deleted file in Google Drive</a>: file ở thùng rác 30 ngày.</li><li>Google Apps Script, <a href="https://developers.google.com/apps-script/guides/triggers/installable" target="_blank" rel="noopener">Installable triggers</a>: trình kích hoạt theo thời gian, giờ chạy xê dịch trong một tiếng.</li><li>Google Apps Script, <a href="https://developers.google.com/apps-script/reference/script/clock-trigger-builder" target="_blank" rel="noopener">ClockTriggerBuilder</a>: không gọi nearMinute thì phút chạy là ngẫu nhiên.</li><li>Paul Ruggiero (Carnegie Mellon University) cho US-CERT, <a href="https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf" target="_blank" rel="noopener">Data Backup Options</a> (2012): quy tắc 3-2-1, chú thích dẫn Peter Krogh, The DAM Book, ấn bản 2, tr. 207, O'Reilly 2009.</li><li>Backblaze, <a href="https://www.backblaze.com/blog/the-3-2-1-backup-strategy/" target="_blank" rel="noopener">The 3-2-1 backup strategy</a>: ba bản, hai phương tiện, một bản ngoài; dẫn lại tài liệu US-CERT 2012.</li><li>Not Fully Yet, <a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html">Ngày tôi mất trắng dữ liệu của mình</a> (25/7/2026): chi tiết sự cố FinTrack.</li></ol><div class="sl-notes"><p><b>Ghi chú.</b> Năm ra đời của quy tắc 3-2-1 lệch nhau giữa các nguồn: tài liệu US-CERT dẫn ấn bản 2 của The DAM Book (2009), nhiều trang khác ghi 2005 theo ấn bản đầu. Bài chỉ nói Peter Krogh phổ biến quy tắc trong cuốn sách này, không nêu năm. Backblaze ghi quy tắc xuất hiện "cuối thập niên 2000" và không nhắc tên Krogh.</p><p>Trang PITR của Google Cloud viết sai cờ lệnh thành <code>--enable-ptir</code> ở phần chữ, khối lệnh ghi đúng <code>--enable-pitr</code>. Bài hướng dẫn bật qua console để tránh nhầm.</p><p>Đồng hồ đầu bài chạy nhanh gấp 360 lần để minh họa độ dài hai cửa sổ, không phải dữ liệu đo thật. Các dòng BigQuery trong sơ đồ là minh họa. Thanh trượt tính theo giả định bản sao theo lịch chạy đều mỗi ngày và mỗi tuần.</p><p>Ảnh: Santeri Viinamäki, <a href="https://commons.wikimedia.org/wiki/File:DVD,_USB_flash_drive_and_external_hard_drive.jpg">DVD, USB flash drive and external hard drive</a>, Wikimedia Commons, CC BY-SA 4.0.</p></div></div></footer><script>(function () {
+  var root = document.getElementById("sl");
+  if (!root) return;
+  root.classList.add("js");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- V8: đồng hồ PITR ---------- */
+  (function () {
+    var dig = $("sl-dig"), dig2 = $("sl-dig2"), b1 = $("sl-bar1"), b2 = $("sl-bar2"), st = $("sl-state"), clock = $("sl-clock"), rp = $("sl-replay");
+    if (!dig) return;
+    var SPEED = 360, OLD = 3600, NEW = 7 * 24 * 3600, raf = 0, t0 = 0, started = false;
+    function fmt(s) { s = Math.max(0, Math.round(s)); var h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (x < 10 ? "0" : "") + x; }
+    function draw(el) {
+      var left = Math.max(0, OLD - el);
+      dig.textContent = fmt(left);
+      dig2.textContent = fmt(NEW - Math.min(el, OLD));
+      b1.style.transform = "scaleX(" + (left / OLD) + ")";
+      b2.style.transform = "scaleX(" + ((NEW - Math.min(el, OLD)) / NEW) + ")";
+    }
+    function finish() {
+      draw(OLD); clock.classList.add("done");
+      st.textContent = "00:00:00. Cửa sổ mặc định đã đóng, PITR không còn đường quay về trước 10:18. Cùng lúc đó, cửa sổ 7 ngày mới vơi đi chưa tới 1%.";
+      rp.hidden = false;
+    }
+    function tick(now) {
+      if (!t0) t0 = now;
+      var el = (now - t0) / 1000 * SPEED;
+      if (el >= OLD) { finish(); return; }
+      draw(el); raf = requestAnimationFrame(tick);
+    }
+    function start() {
+      cancelAnimationFrame(raf); t0 = 0; clock.classList.remove("done"); rp.hidden = true;
+      st.textContent = "Khi PITR chưa bật, Firestore chỉ cho đọc lại dữ liệu của 1 giờ vừa qua. Đồng hồ đang đếm.";
+      raf = requestAnimationFrame(tick);
+    }
+    rp.addEventListener("click", start);
+    if (reduce) { finish(); return; }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !started) { started = true; setTimeout(start, 600); io.disconnect(); } }); }, { threshold: .4 });
+      io.observe(clock);
+    } else { finish(); }
+  })();
+
+  /* ---------- B3: cuộn kể chuyện ---------- */
+  (function () {
+    var svg = $("sl-g"), steps = [].slice.call(document.querySelectorAll("#sl-steps .sl-step"));
+    if (!svg || !steps.length) return;
+    var N = steps.length, nEl = $("sl-stage-n"), tEl = $("sl-stage-t"), cur = -1;
+    function paint(s, k) {
+      [].forEach.call(s.querySelectorAll(".L"), function (g) {
+        var l = +g.getAttribute("data-l");
+        g.classList.toggle("on", l <= k); g.classList.toggle("cur", l === k);
+      });
+    }
+    function set(k) {
+      if (k === cur) return; cur = k;
+      paint(svg, k);
+      steps.forEach(function (s, i) { s.classList.toggle("cur", i === k); });
+      nEl.textContent = "Lớp " + (k + 1) + "/" + N;
+      tEl.textContent = steps[k].getAttribute("data-t");
+    }
+    /* ảnh tĩnh cho điện thoại: mỗi bước một bản sao của sơ đồ */
+    steps.forEach(function (s, i) {
+      var box = document.createElement("div"); box.className = "sl-mini"; box.setAttribute("aria-hidden", "true");
+      var c = svg.cloneNode(true); c.removeAttribute("id"); c.setAttribute("role", "presentation");
+      [].forEach.call(c.querySelectorAll("[id]"), function (n) { n.removeAttribute("id"); });
+      var tt = c.querySelector("title"); if (tt) tt.parentNode.removeChild(tt);
+      paint(c, i); box.appendChild(c);
+      s.insertBefore(box, s.firstChild);
+    });
+    set(0);
+    if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) set(steps.indexOf(e.target)); });
+    }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
+    steps.forEach(function (s) { io.observe(s); });
+  })();
+
+  /* ---------- T6: thanh trượt thời gian ---------- */
+  (function () {
+    var rng = $("sl-rng"), out = $("sl-out"), ver = $("sl-verdict");
+    if (!rng) return;
+    $("sl-range").hidden = false;
+    var STOPS = [[0.5, "30 phút"], [50 / 60, "50 phút"], [2, "2 giờ"], [6, "6 giờ"], [24, "1 ngày"], [72, "3 ngày"], [144, "6 ngày"], [192, "8 ngày"], [312, "13 ngày"], [360, "15 ngày"], [504, "3 tuần"], [1008, "6 tuần"], [1680, "10 tuần"], [1848, "11 tuần"], [2160, "3 tháng"]];
+    var rows = [].slice.call(document.querySelectorAll("#sl-tool .sl-row"));
+    var LAST = STOPS.length - 1;
+    function pos(h) {
+      if (h <= STOPS[0][0]) return 0;
+      for (var i = 0; i < LAST; i++) {
+        var a = STOPS[i][0], b = STOPS[i + 1][0];
+        if (h <= b) return (i + Math.log(h / a) / Math.log(b / a)) / LAST * 100;
+      }
+      return 100;
+    }
+    var NAMES = ["PITR", "bản sao hằng ngày", "bản sao hằng tuần", "BigQuery và CSV"];
+    var HOW = ["tua về đúng phút trước khi hỏng", "mất tối đa khoảng một ngày dữ liệu cuối", "mất tối đa khoảng một tuần dữ liệu cuối", "dựng lại bằng tay từ bảng lịch sử"];
+    rows.forEach(function (r) {
+      var lim = +r.getAttribute("data-lim");
+      r.querySelector(".sl-trk i").style.width = (lim ? pos(lim) : 100) + "%";
+    });
+    function upd() {
+      var k = +rng.value, h = STOPS[k][0], best = -1;
+      out.textContent = STOPS[k][1];
+      rng.setAttribute("aria-valuetext", STOPS[k][1]);
+      var oldOk = false;
+      rows.forEach(function (r, i) {
+        var lim = +r.getAttribute("data-lim"), ok = lim === 0 || h <= lim;
+        if (lim === 1) ok = h < 1;
+        r.classList.toggle("ok", ok);
+        r.querySelector(".sl-chip").textContent = ok ? "Cứu được" : "Quá hạn";
+        r.querySelector(".sl-trk s").style.left = pos(h) + "%";
+        if (i === 0) oldOk = ok;
+        else if (ok && best < 0) best = i - 1;
+        r.classList.remove("best");
+      });
+      if (best >= 0) rows[best + 1].classList.add("best");
+      ver.innerHTML = "<b>Cấu hình cũ:</b> " + (oldOk ? "PITR mặc định còn kịp, nhưng chỉ khi bạn phát hiện trong giờ đầu." : "mất trắng.") +
+        " <b>Bây giờ:</b> dùng " + NAMES[best] + ", " + HOW[best] + ".";
+    }
+    rng.addEventListener("input", upd);
+    upd();
+  })();
+
+  /* ---------- Nút sao chép ---------- */
+  [].forEach.call(root.querySelectorAll(".sl-copy"), function (b) {
+    b.addEventListener("click", function () {
+      var pre = $(b.getAttribute("data-for")); if (!pre) return;
+      var txt = pre.textContent;
+      function done(ok) { b.textContent = ok ? "Đã chép" : "Bôi đen để chép"; b.classList.toggle("ok", ok); setTimeout(function () { b.textContent = "Sao chép"; b.classList.remove("ok"); }, 1800); }
+      function fallback() {
+        var ta = document.createElement("textarea"); ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand("copy"); } catch (e) {} document.body.removeChild(ta); done(ok);
+      }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { done(true); }, fallback); else fallback();
+    });
+  });
+})();</script></article></div></div><footer class="content__footer"><div class="entry-wrapper"><p class="content__updated">This article was updated on tháng 11 24, 2026</p><div class="content__actions"><ul class="content__tag"><li><a href="https://notfullyet.com/tags/du-lieu-cong-nghe/">Data &amp; Tech</a></li></ul><div class="content__share"><button class="btn--icon content__share-button js-content__share-button"><svg width="20" height="20" aria-hidden="true"><use xlink:href="https://notfullyet.com/assets/svg/svg-map.svg#share"></use></svg> <span>Share It</span></button><div class="content__share-popup js-content__share-popup"></div></div></div><div class="content__bio bio"><div><h3 class="h4 bio__name"><a href="https://notfullyet.com/authors/viet-tran/" rel="author">thehill137</a></h3></div></div></div><nav class="content__nav"><div class="wrapper"><div class="content__nav-inner"><div class="content__nav-prev"><a href="https://notfullyet.com/lam-game-cho-con.html" class="content__nav-link" rel="prev"><figure class="content__nav-image"><img src="https://notfullyet.com/media/posts/22/responsive/2026-11-22-toi-lam-game-cho-con-bang-cach-noi-chuyen-voi-ai-xs.jpg" class="lazyload" loading="lazy" alt="" height="900" width="900"></figure><div><span>Previous</span> Làm game cho con</div></a></div><div class="content__nav-next"><a href="https://notfullyet.com/nhung-buoi-toi-kiet-suc.html" class="content__nav-link" rel="next"><div><span>Next</span> Những buổi tối kiệt sức</div><figure class="content__nav-image"><img src="https://notfullyet.com/media/posts/24/responsive/nhung-buoi-toi-ca-nha-kiet-suc-vi-con-tang-dong-xs.jpg" class="lazyload" loading="lazy" alt="" height="900" width="900"></figure></a></div></div></div></nav></footer></article><div class="content__related related"><div class="wrapper"><h2 class="h4 related__title">You should also read:</h2><article class="feed__item feed__item--centered"><figure class="feed__image related__image"><img src="https://notfullyet.com/media/posts/9/Gemini_Generated_Image_fgbznjfgbznjfgbz.png" srcset="https://notfullyet.com/media/posts/9/responsive/Gemini_Generated_Image_fgbznjfgbznjfgbz-xs.png 640w, https://notfullyet.com/media/posts/9/responsive/Gemini_Generated_Image_fgbznjfgbznjfgbz-sm.png 768w, https://notfullyet.com/media/posts/9/responsive/Gemini_Generated_Image_fgbznjfgbznjfgbz-md.png 1024w" sizes="(min-width: 600px) calc(4.38vw + 143px), 87.86vw" loading="lazy" height="1536" width="2752" alt=""></figure><div class="feed__content"><header><div class="feed__meta"><a href="https://notfullyet.com/authors/viet-tran/" class="feed__author">thehill137</a> <time datetime="2026-07-25T21:29" class="feed__date">tháng 7 25, 2026</time></div><h3 class="feed__title"><a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html">Ngày tôi mất trắng dữ liệu của mình</a></h3></header><p>Tự truyện của một người mới tập code, dựng app bằng AI - và cái giá của một dòng lệnh tưởng như vô hại. Sáng đó tôi mở app quản lý chi tiêu như mọi ngày. Nhưng màn hình trắng trơn. Không một giao dịch.</p><a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html" class="readmore feed__readmore">Continue reading...</a></div></article></div></div></main><footer class="footer footer--glued"><div class="wrapper"><div class="footer__copyright"><p>Power with ❤️</p></div><button id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://notfullyet.com/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://notfullyet.com/assets/js/scripts.min.js?v=ffcbea6c02c8178d10092962b235a5b0"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>
