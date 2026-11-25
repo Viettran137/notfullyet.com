@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Giao việc cho AI agent giống giao việc cho một nhân viên mới</title>
+        <meta name="description" content="Chuyển từ chat sang agent, tôi giao việc như với nhân viên mới: viết file hướng dẫn, khung giao việc 4 dòng, cho quyền từ từ và tự kiểm tra kết quả.">
+         
+        <meta name="generator" content="Publii Open-Source CMS for Static Site">
+
+        <link rel="canonical" href="https://notfullyet.com/giao-viec-cho-ai-agent.html">
+        <link rel="alternate" type="application/atom+xml" href="https://notfullyet.com/feed.xml" title="NFY ♪♫♬♭♯♩♮♫♪° - RSS">
+<link rel="alternate" type="application/json" href="https://notfullyet.com/feed.json" title="NFY ♪♫♬♭♯♩♮♫♪° - JSON">
+
+        <meta property="og:title" content="Giao việc cho AI Agent"><meta property="og:image" content="https://notfullyet.com/media/posts/27/giao-viec-cho-ai-agent-nhu-nhan-vien-moi.jpg"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="900"><meta property="og:site_name" content="NFY ♪♫♬♭♯♩♮♫♪°"><meta property="og:description" content="Chuyển từ chat sang agent, tôi giao việc như với nhân viên mới: viết file hướng dẫn, khung giao việc 4 dòng, cho quyền từ từ và tự kiểm tra kết quả."><meta property="og:url" content="https://notfullyet.com/giao-viec-cho-ai-agent.html"><meta property="og:type" content="article">
+        
+        <link rel="stylesheet" href="https://notfullyet.com/assets/css/style.css?v=11bee19e86e8eda2cf9a60efd975666d">
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://notfullyet.com/giao-viec-cho-ai-agent.html"},"headline":"Giao việc cho AI Agent","datePublished":"2026-11-25T22:27+07:00","dateModified":"2026-11-25T22:27+07:00","image":{"@type":"ImageObject","url":"https://notfullyet.com/media/posts/27/giao-viec-cho-ai-agent-nhu-nhan-vien-moi.jpg","height":900,"width":1600},"description":"Chuyển từ chat sang agent, tôi giao việc như với nhân viên mới: viết file hướng dẫn, khung giao việc 4 dòng, cho quyền từ từ và tự kiểm tra kết quả.","author":{"@type":"Person","name":"thehill137","url":"https://notfullyet.com/authors/viet-tran/"},"publisher":{"@type":"Organization","name":"thehill137","logo":{"@type":"ImageObject","url":"https://notfullyet.com/media/website/NFY-Logo.png","height":1024,"width":1024}}}</script>
+        <noscript>
+            <style>
+                img[loading] {
+                    opacity: 1;
+                }
+            </style>
+        </noscript>	
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W3V4FRPK');</script>
+<!-- End Google Tag Manager -->
+    </head>
+    <body class="post-template">
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3V4FRPK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><header class="top js-header">
+   <a class="logo" href="https://notfullyet.com/">
+         <img src="https://notfullyet.com/media/website/NFY-Logo.png" alt="NFY ♪♫♬♭♯♩♮♫♪°" width="1024" height="1024">
+   </a>
+         <nav class="navbar js-navbar">
+            <button
+               class="navbar__toggle js-toggle"
+               aria-label="Menu"
+               aria-haspopup="true"
+               aria-expanded="false">
+               <span class="navbar__toggle-box">
+                  <span class="navbar__toggle-inner">Menu</span>
+               </span>
+            </button>
+          <ul class="navbar__menu">
+                   <li>
+                     <a
+                        href="https://notfullyet.com/tags/kien-thuc/"
+                           title="Kiến thức"
+                           target="_self"
+      >
+                        Kiến thức
+                    </a>
+      
+               </li>
+                   <li>
+                     <a
+                        href="https://notfullyet.com/tags/dong-hanh/"
+                           target="_self"
+      >
+                        Đồng Hành
+                    </a>
+      
+               </li>
+                   <li>
+                     <a
+                        href="https://notfullyet.com/lich-su.html"
+                           target="_self"
+      >
+                        Lịch sử
+                    </a>
+      
+               </li>
+                   <li>
+                     <a
+                        href="https://notfullyet.com/tags/du-lieu-cong-nghe/"
+                           target="_self"
+      >
+                        Data &amp; Tech
+                    </a>
+      
+               </li>
+          </ul>
+         </nav>
+</header>
+<main class="post">
+      <article class="content">
+         <div class="hero ">
+            <header class="hero__content ">
+               <div class="wrapper">
+                  <h1>Giao việc cho AI Agent</h1>
+                     <div class="feed__meta content__meta  ">
+                              <a href="https://notfullyet.com/authors/viet-tran/" class="feed__author">thehill137</a>
+
+                           <time datetime="2026-11-25T22:27" class="feed__date">
+                                 tháng 11 25, 2026
+                           </time>
+                     </div>
+                </div>
+            </header>
+
+                  <figure class="hero__image">  
+                     <div class="hero__image-wrapper">                    
+                        <img
+                           src="https://notfullyet.com/media/posts/27/giao-viec-cho-ai-agent-nhu-nhan-vien-moi.jpg"
+                              srcset="https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-xs.jpg 640w ,https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-sm.jpg 768w ,https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-md.jpg 1024w ,https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-lg.jpg 1366w ,https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-xl.jpg 1600w ,https://notfullyet.com/media/posts/27/responsive/giao-viec-cho-ai-agent-nhu-nhan-vien-moi-2xl.jpg 1920w" sizes="88vw"
+                            loading="eager"
+                           height="900"
+                           width="1600"
+                           alt="">
+                        </div>
+                      
+                  </figure>
+         </div>
+
+         <div class="entry-wrapper content__entry">           
+            <div><p>Chuyển từ chat sang agent, tôi giao việc như với nhân viên mới: viết file hướng dẫn, khung giao việc 4 dòng, cho quyền từ từ và tự kiểm tra kết quả.</p>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap&subset=vietnamese">
+<style>
+html:has(.sl){overflow-x:clip}
+
+.content:has(.sl){overflow:clip}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi{--bg:#0F2742;--surface:#143252;--ink:#F2F6FB;--text:#C8D6E6;--mut:#8FA6C0;--line:#2A4A6E;--acc:#FFD166;--acc2:#7FDBFF;
+  --head:"Space Grotesk",system-ui,sans-serif;--sans:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.75,.25,1);
+  position:relative;left:50%;width:100vw;margin:0 0 0 -50vw;background:var(--bg);color:var(--text);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.72;font-size:17.5px;text-align:left;
+  background-image:linear-gradient(rgba(42,74,110,.38) 1px,transparent 1px),linear-gradient(90deg,rgba(42,74,110,.38) 1px,transparent 1px);
+  background-size:32px 32px;background-position:-1px -1px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *::before,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *::after{box-sizing:border-box}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h1,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h2,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h3,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi p,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi figure,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi blockquote,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ol,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ul,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi li,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi pre,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi table{margin:0;padding:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h1,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h2,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi h3{font-family:var(--head);color:var(--ink);text-wrap:balance;letter-spacing:-.015em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi p{text-wrap:pretty}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi a{color:inherit!important;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(127,219,255,.55);text-underline-offset:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi a:hover{text-decoration-color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi figcaption{text-align:left;font-style:normal;padding:0;clear:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi button{height:auto;min-height:0;width:auto;margin:0;line-height:1.3;text-transform:none;letter-spacing:0;box-shadow:none;font-family:var(--sans);cursor:pointer;border-radius:6px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi button,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi button + button{margin:0!important;transition:border-color .15s,color .15s;will-change:auto;overflow:visible}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button:focus{background:var(--surface);color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button[data-a="yes"]:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button[data-a="yes"]:focus{background:var(--acc);color:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res button:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res button:focus,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle:focus{background:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res button:hover{color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code-h button:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code-h button:focus{background:transparent;color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-ctl button:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-ctl button:focus{background:transparent;color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"]:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"]:focus{background:transparent;color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"][aria-selected="true"]:hover,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"][aria-selected="true"]:focus{background:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ol,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ul{list-style:none}.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi li::before{content:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi code{font:500 .86em var(--mono);color:var(--ink);background:rgba(127,219,255,.1);padding:1px 5px;border-radius:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .mono{font-family:var(--mono)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi pre,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi code,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-prompt,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out{font-variant-ligatures:none}
+
+/* ---------- Khung cửa sổ ---------- */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-win{max-width:1280px;margin:0 auto;padding:40px 24px 64px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-frame{background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--surface);border-radius:12px 12px 0 0;font:500 12.5px/1 var(--mono);color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);flex:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title i:first-child{background:var(--acc);border-color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title span{margin-left:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title b{margin-left:auto;font-weight:500;color:var(--acc2);white-space:nowrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-body{display:grid;grid-template-columns:236px minmax(0,1fr)}
+
+/* Thanh bên */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side{border-right:1px solid var(--line);background:rgba(20,50,82,.55)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side-in{position:sticky;top:var(--sl-top);padding:18px 0 22px;max-height:100vh;overflow:auto}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side h2{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);padding:0 18px 12px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a{display:flex;align-items:center;gap:9px;padding:6px 18px;font:400 13.5px/1.35 var(--mono);color:var(--text)!important;text-decoration:none!important;border-left:2px solid transparent}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a:hover{background:rgba(127,219,255,.06)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a.sl-on{border-left-color:var(--acc);background:rgba(255,209,102,.08);color:var(--ink)!important}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a .sl-ic{flex:none;width:18px;font:700 10px/1 var(--mono);color:var(--acc2);text-align:center}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a.sl-on .sl-ic{color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree .sl-dir{font:500 12.5px/1.3 var(--mono);color:var(--mut);padding:6px 18px 4px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-prog{margin:18px 18px 0;font:400 12px/1.4 var(--mono);color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-prog div{height:3px;background:var(--line);margin-top:7px;border-radius:2px;overflow:hidden}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-prog div i{display:block;height:100%;width:0;background:var(--acc);transition:width .2s linear}
+
+/* Vùng soạn thảo */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-main{min-width:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file{border-bottom:1px solid var(--line);scroll-margin-top:12px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file:last-child{border-bottom:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tabbar{display:flex;align-items:stretch;border-bottom:1px solid var(--line);background:rgba(20,50,82,.7);overflow:hidden}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tabbar .sl-t{padding:9px 16px;font:500 12.5px/1.2 var(--mono);color:var(--ink);background:var(--bg);border-right:1px solid var(--line);border-top:2px solid var(--acc);white-space:nowrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tabbar .sl-crumb{padding:9px 16px;font:400 12px/1.2 var(--mono);color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-pad{padding:56px 56px 64px;position:relative}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-col{max-width:40rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-col > * + *{margin-top:1.05em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-wide{max-width:52rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file h2{font-size:clamp(27px,3.1vw,38px);line-height:1.14;font-weight:700;margin-bottom:26px;max-width:40rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file h2 .sl-n{display:block;font:500 13px/1 var(--mono);color:var(--acc);letter-spacing:.06em;margin-bottom:14px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file h3{font-size:21px;line-height:1.3;font-weight:600;margin:46px 0 16px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-gap{margin-top:36px!important}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cap{font:400 13px/1.55 var(--sans);color:var(--mut);margin-top:12px;max-width:44rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tag{display:inline-block;font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--acc);padding:5px 8px 4px;border-radius:3px;margin-bottom:12px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tag.b{background:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ul.sl-ag-dash li{position:relative;padding-left:22px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ul.sl-ag-dash li + li{margin-top:6px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi ul.sl-ag-dash li::before{content:"–";position:absolute;left:2px;color:var(--acc2);font-family:var(--mono)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-note{border-left:2px solid var(--acc);padding:4px 0 4px 20px;color:var(--ink);font-size:18.5px;line-height:1.6}
+
+/* ---------- Hero ---------- */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero .sl-ag-pad{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:52px;align-items:start;padding-top:60px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-kick{font:500 13px/1.4 var(--mono);color:var(--acc2);margin-bottom:22px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-kick b{color:var(--acc);font-weight:500}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero h1{font-size:clamp(34px,3.7vw,52px);line-height:1.04;font-weight:700;letter-spacing:-.025em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero h1 em{font-style:normal;color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-dek{font-size:19.5px;line-height:1.6;margin-top:26px;color:var(--ink);font-style:italic;max-width:32rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-by{font:400 13px/1.6 var(--mono);color:var(--mut);margin-top:28px;border-top:1px dashed var(--line);padding-top:16px;max-width:32rem}
+
+/* Chuỗi tin nhắn + hộp thoại quyền */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-chat{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-chat-h{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font:500 12px/1.3 var(--mono);color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-chat-h b{color:var(--acc2);font-weight:500}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-msgs{padding:16px 14px 6px;display:flex;flex-direction:column;gap:10px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-m{max-width:88%;padding:10px 13px;border-radius:10px;font-size:15px;line-height:1.5}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-m small{display:block;font:500 11px/1 var(--mono);color:var(--mut);margin-bottom:6px;letter-spacing:.04em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-m.sl-me{align-self:flex-end;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.35);color:var(--ink);border-bottom-right-radius:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-m.sl-ai{align-self:flex-start;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm{margin:8px 14px 14px;border:1.5px solid var(--acc);border-radius:8px;background:var(--bg);padding:14px 14px 12px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm-t{font:600 13px/1.3 var(--mono);color:var(--acc);display:flex;align-items:center;gap:8px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm-t::before{content:"?";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--acc);color:var(--bg);font-size:11px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm pre{margin:10px 0 6px;padding:10px 12px;background:var(--surface);border-radius:5px;font:500 13.5px/1.5 var(--mono);color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm pre::before{content:"$ ";color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm p{font-size:13.5px;color:var(--mut);line-height:1.45}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns{align-items:center}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button{font:600 13.5px/1.2 var(--sans);padding:9px 14px!important;min-height:0!important;height:auto!important;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button:hover{border-color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button[data-a="yes"]{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button[aria-pressed="true"]{outline:2px solid var(--acc2);outline-offset:2px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns kbd{font:500 11px var(--mono);opacity:.7;margin-left:6px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res{margin:0 14px 14px;min-height:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res:empty{display:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res .sl-l{font:500 13px/1.5 var(--mono);color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res p{font-size:14.5px;line-height:1.55;margin-top:6px;color:var(--text)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-res button{margin-top:10px;font:500 12px/1 var(--mono);background:none;border:0;color:var(--mut);padding:0;text-decoration:underline;text-underline-offset:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero figcaption{font:400 12.5px/1.5 var(--sans);color:var(--mut);margin-top:10px}
+
+/* ---------- Khối code / diff / log ---------- */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:28px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--line);font:500 12px/1.3 var(--mono);color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code-h button{font:500 12px/1 var(--mono);background:transparent;border:1px solid var(--line);color:var(--acc2);padding:6px 10px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-code-h button:hover{border-color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines{font-variant-ligatures:none;padding:12px 0;overflow-x:auto;font:400 13.5px/1.7 var(--mono);color:var(--text)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines > span{display:block;padding:0 16px 0 0;white-space:pre}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines > span::before{content:attr(data-n);display:inline-block;width:42px;padding-right:14px;text-align:right;color:var(--mut);opacity:.55;user-select:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-add{background:rgba(127,219,255,.09);color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-add::before{content:"+";color:var(--acc2);opacity:1}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-del{background:rgba(255,209,102,.07);color:var(--mut);text-decoration:line-through;text-decoration-color:rgba(255,209,102,.6)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-del::before{content:"−";color:var(--acc);opacity:1;text-decoration:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-warn{color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-k{color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-h{color:var(--ink);font-weight:700}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines .sl-c{color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-wrap .sl-ag-lines > span{white-space:pre-wrap;padding-left:58px;text-indent:-58px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-wrap .sl-ag-lines > span::before{text-indent:0}
+
+/* Tab file thật */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tablist"]{display:flex;border-bottom:1px solid var(--line);overflow-x:auto}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"]{font:500 12.5px/1.2 var(--mono);color:var(--mut);background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;padding:11px 16px;border-top:2px solid transparent;white-space:nowrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tab"][aria-selected="true"]{color:var(--ink);background:var(--bg);border-top-color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tabpanel"]{background:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed [role="tabpanel"] + [role="tabpanel"]{border-top:1px solid var(--line)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-ed .sl-ag-lines{max-height:none}
+
+/* ---------- T7: so sánh kéo vạch ---------- */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-wrap{margin-top:30px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp{position:relative;display:grid;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp > .sl-side{grid-area:1/1;padding:22px 24px 26px;min-width:0;position:relative}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-side.sl-before{background:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-side.sl-after{background:var(--surface)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-lab{font:700 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-before .sl-lab{color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-after .sl-lab{color:var(--acc);text-align:right}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-prompt{font:500 14px/1.55 var(--mono);color:var(--ink);background:rgba(127,219,255,.06);border:1px dashed var(--line);border-radius:6px;padding:12px 14px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-before .sl-prompt{font-size:17px;padding:22px 16px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-prompt b{color:var(--acc);font-weight:700}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-prompt div + div{margin-top:7px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out{margin-top:16px;font:400 13.5px/1.65 var(--mono)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out .sl-t{font:600 11px/1 var(--mono);letter-spacing:.12em;color:var(--mut);text-transform:uppercase;margin-bottom:8px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out span{display:block;padding-left:22px;text-indent:-22px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out .sl-x{color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out .sl-ok{color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out .sl-m{color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-score{display:flex;gap:18px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font:500 12.5px/1.4 var(--mono);color:var(--mut);flex-wrap:wrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-score b{display:block;font:700 24px/1.1 var(--head);color:var(--ink)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-before .sl-score b{color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-after .sl-score b{color:var(--acc2)}
+/* chỉ bật chồng lớp khi JS chạy */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js){grid-template-columns:1fr 1fr}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js) > .sl-side.sl-before{grid-area:1/1}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js) > .sl-side.sl-after{grid-area:1/2;border-left:1px solid var(--line)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js) .sl-handle{display:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js > .sl-side.sl-before{z-index:2;clip-path:inset(0 calc(100% - var(--p,50%)) 0 0);border-right:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle{position:absolute;top:0;bottom:0;left:clamp(22px,var(--p,50%),calc(100% - 22px));width:44px;margin-left:-22px;z-index:3;display:flex;justify-content:center;cursor:ew-resize;background:none;border:0;padding:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle::before{content:"";position:absolute;top:0;bottom:0;left:21px;width:2px;background:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle span{position:relative;align-self:center;width:38px;height:38px;border-radius:50%;background:var(--acc);color:var(--bg);display:grid;place-items:center;font:700 14px/1 var(--mono);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle:focus-visible{outline:none}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-handle:focus-visible span{outline:3px solid var(--acc2);outline-offset:3px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-ctl{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-ctl button{font:500 12.5px/1 var(--mono);padding:8px 12px;background:transparent;border:1px solid var(--line);color:var(--text)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-ctl button:hover{border-color:var(--acc2);color:var(--ink)}
+
+@media (min-width:861px){
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js .sl-side.sl-before > *{max-width:46%}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js .sl-side.sl-after > *{max-width:46%;margin-left:auto}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js .sl-side::after{position:absolute;top:50%;transform:translateY(-50%);width:40%;font:500 13px/1.5 var(--mono);color:var(--mut);opacity:.7;text-align:center;border:1px dashed var(--line);border-radius:8px;padding:28px 18px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js .sl-side.sl-before::after{content:"phần còn lại: agent tự đoán";right:4%}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp.sl-js .sl-side.sl-after::after{content:"không còn gì phải đoán";left:4%}
+}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-tip{display:none;font:500 12.5px/1.4 var(--mono);color:var(--acc);margin-bottom:10px}
+/* ---------- Bảng nấc quyền ---------- */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-scroll{overflow-x:auto;margin-top:26px;border:1px solid var(--line);border-radius:8px;background:var(--surface);-webkit-overflow-scrolling:touch}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hint{display:none;font:400 12px/1.4 var(--mono);color:var(--mut);margin-top:8px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi table.sl-ag-tb{border-collapse:collapse;width:100%;min-width:680px;font-size:14.5px;line-height:1.5}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb th,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb tr:last-child td{border-bottom:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb thead th{font:600 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);background:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb thead th.sl-s1{color:var(--acc2)}.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb thead th.sl-s3{color:var(--acc)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb tbody th{font:600 15px/1.3 var(--head);color:var(--ink);width:16%}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb td code{font-size:.84em;white-space:nowrap}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tb td.sl-s3{background:rgba(255,209,102,.05)}
+
+/* Log sự cố */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log{margin-top:22px;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);font:500 12.5px/1.3 var(--mono);color:var(--mut);background:var(--bg)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-h .sl-lv{color:var(--bg);background:var(--acc);padding:3px 7px 2px;border-radius:3px;font-weight:700;font-size:11px;letter-spacing:.08em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-h b{color:var(--ink);font-weight:500}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b{padding:16px 18px 18px;display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:24px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b p{font-size:15.5px;line-height:1.65}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b p + p{margin-top:.8em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dl{font:400 12.5px/1.5 var(--mono);color:var(--mut);border-left:1px dashed var(--line);padding-left:16px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dt{color:var(--acc2);margin-top:10px}.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dt:first-child{margin-top:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dd{margin:2px 0 0;color:var(--text)}
+
+/* Checklist */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check{margin-top:24px;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:8px 0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check label{margin:0;font-variation-settings:normal;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start;padding:10px 18px;cursor:pointer;font-size:15.5px;line-height:1.55}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check label:hover{background:rgba(127,219,255,.05)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check input{opacity:1;position:static;flex:none;appearance:none;-webkit-appearance:none;width:20px;height:20px;margin:2px 0 0;border:1.5px solid var(--acc2);border-radius:4px;background:var(--bg);display:grid;place-items:center;cursor:pointer}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check input::after{content:"";width:10px;height:6px;border-left:2px solid var(--bg);border-bottom:2px solid var(--bg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check label > span{grid-column:2}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check input:checked{background:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check input:checked::after{opacity:1}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check input:checked + span{color:var(--mut);text-decoration:line-through;text-decoration-color:rgba(143,166,192,.6)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check-f{font:400 12.5px/1.4 var(--mono);color:var(--mut);padding:8px 18px 6px;border-top:1px dashed var(--line);margin-top:6px}
+
+/* Ảnh */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-fig{margin-top:34px;max-width:42rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-fig img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);filter:saturate(.85)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-fig figcaption{font:400 13px/1.55 var(--sans);color:var(--mut);margin-top:10px}
+
+/* Kết */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-end{margin-top:40px;padding-top:26px;border-top:1px dashed var(--line);max-width:40rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-end p{font-size:19px;line-height:1.6;color:var(--ink);font-style:italic}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-end .sl-sig{font:400 14px/1.5 var(--mono);color:var(--acc2);font-style:normal;margin-top:16px}
+
+/* Nguồn */
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src ol{counter-reset:s;max-width:52rem}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src li{counter-increment:s;position:relative;padding-left:36px;font-size:14.5px;line-height:1.55;color:var(--text)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src li + li{margin-top:10px}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;font:500 12px/1.6 var(--mono);color:var(--acc2)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src .sl-notes{margin-top:30px;max-width:52rem;font-size:14.5px;line-height:1.6}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src .sl-notes p + p{margin-top:.7em}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-src h3{margin-top:0}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-status{display:flex;flex-wrap:wrap;gap:4px 22px;padding:8px 16px;border-top:1px solid var(--line);background:var(--surface);border-radius:0 0 12px 12px;font:400 12px/1.5 var(--mono);color:var(--mut)}
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-status b{color:var(--acc);font-weight:500}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-pad{padding:48px 40px 56px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero .sl-ag-pad{grid-template-columns:minmax(0,1fr);gap:40px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero .sl-ag-chat-col{max-width:34rem}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b{grid-template-columns:minmax(0,1fr)}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dl{border-left:0;border-top:1px dashed var(--line);padding:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dt{margin-top:0}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b dd{margin:0}
+}
+@media (max-width:860px){
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi{font-size:17px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-win{padding:20px 12px 40px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-body{grid-template-columns:minmax(0,1fr)}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side{border-right:0;border-bottom:1px solid var(--line);position:sticky;top:var(--sl-top);z-index:20;background:var(--surface)}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side-in{position:static;padding:0;max-height:none;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side-in::-webkit-scrollbar{display:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-side h2,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree .sl-dir,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-prog{display:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree{display:flex}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;padding:11px 13px;font-size:12.5px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tree a.sl-on{border-bottom-color:var(--acc)}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file{scroll-margin-top:52px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-pad{padding:40px 28px 48px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hint{display:block}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp-wrap.sl-js .sl-ag-cmp-tip{display:block}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js){grid-template-columns:minmax(0,1fr)}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp:not(.sl-js) > .sl-side.sl-after{grid-area:2/1;border-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:480px){
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi{font-size:16.5px;background-size:24px 24px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-win{padding:12px 0 28px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-frame{border-radius:0;border-left:0;border-right:0}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title{border-radius:0}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-title b{display:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-status{border-radius:0}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-pad{padding:32px 16px 40px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero .sl-ag-pad{padding-top:34px;gap:32px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-hero h1{font-size:34px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-dek{font-size:18px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-file h2{font-size:26px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-tabbar .sl-crumb{display:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-chat-h span:last-child{display:none}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-m{max-width:94%;font-size:14.5px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-perm{margin:8px 10px 12px;padding:12px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-btns button{flex:1 1 auto}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines{font-size:12.5px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-lines > span::before{width:32px;padding-right:10px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-wrap .sl-ag-lines > span{padding-left:42px;text-indent:-42px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp > .sl-side{padding:18px 14px 20px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-prompt{font-size:13px;padding:10px 11px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-before .sl-prompt{font-size:15px;padding:16px 12px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-out{font-size:12.5px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-score{gap:12px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-cmp .sl-score b{font-size:20px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-log-b{padding:14px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-check label{padding:10px 14px}
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi .sl-ag-note{font-size:17px;padding-left:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *::before,.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+.sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi{--sl-top:0px}
+</style>
+<article class="sl sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi" id="sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi">
+<div class="sl-ag-win">
+<div class="sl-ag-frame">
+  <div class="sl-ag-title" aria-hidden="true"><i></i><i></i><i></i><span>so-tay / giao-viec-cho-agent</span><b>notfullyet · Data &amp; Tech</b></div>
+  <div class="sl-ag-body">
+
+  <nav class="sl-ag-side" aria-label="Các phần của bài">
+    <div class="sl-ag-side-in">
+      <h2>Thư mục bài</h2>
+      <div class="sl-ag-tree">
+        <p class="sl-dir">▾ giao-viec/</p>
+        <a href="#sl-ag-f0"><span class="sl-ic">◆</span>00-giao-viec.chat</a>
+        <a href="#sl-ag-readme"><span class="sl-ic">MD</span>README.md</a>
+        <a href="#sl-ag-f1"><span class="sl-ic">MD</span>01-nguoi-moi.md</a>
+        <a href="#sl-ag-f2"><span class="sl-ic">MD</span>02-huong-dan.md</a>
+        <a href="#sl-ag-f3"><span class="sl-ic">TXT</span>03-khung-4-dong.txt</a>
+        <a href="#sl-ag-f4"><span class="sl-ic">{}</span>04-quyen.json</a>
+        <a href="#sl-ag-f5"><span class="sl-ic">LOG</span>05-kiem-tra.log</a>
+        <a href="#sl-ag-f6"><span class="sl-ic">MD</span>06-nguoi-quan-ly.md</a>
+        <a href="#sl-ag-src"><span class="sl-ic">§</span>NGUON.md</a>
+      </div>
+      <div class="sl-ag-prog" aria-hidden="true">đã đọc <span id="sl-ag-pc">0%</span><div><i id="sl-ag-pb"></i></div></div>
+    </div>
+  </nav>
+
+  <div class="sl-ag-main">
+
+  <!-- 00 hero -->
+  <section class="sl-ag-file sl-ag-hero" id="sl-ag-f0">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">00-giao-viec.chat</span><span class="sl-crumb">giao-viec › 00-giao-viec.chat</span></div>
+    <div class="sl-ag-pad">
+      <div>
+        <p class="sl-ag-kick"><b>//</b> Data &amp; Tech · Agent · sổ tay giao việc</p>
+        <h1>Giao việc cho AI agent giống giao việc cho một <em>nhân viên mới</em></h1>
+        <p class="sl-ag-dek">Chat với AI giống hỏi ý kiến một người giỏi. Dùng agent giống thuê người đó về làm. Mà đã thuê người thì phải biết giao việc.</p>
+        <p class="sl-ag-by">Một người quản lý tay ngang · 23/11/2026 · khoảng 11 phút đọc</p>
+      </div>
+      <figure class="sl-ag-chat-col">
+        <div class="sl-ag-chat">
+          <div class="sl-ag-chat-h"><span>agent · thư mục <b>du-lieu-cong-nghe/</b></span><span>phiên mới</span></div>
+          <div class="sl-ag-msgs">
+            <div class="sl-ag-m sl-me"><small>TÔI · 21:40</small>Dọn giúp tôi thư mục bai-viet. Ảnh để lẫn với bài, nhìn rối quá.</div>
+            <div class="sl-ag-m sl-ai"><small>AGENT</small>Tôi thấy 6 file .jpg nằm cạnh các file .md. Tôi sẽ tạo thư mục <code>anh/</code> rồi chuyển hết ảnh vào đó.</div>
+          </div>
+          <div class="sl-ag-perm" role="group" aria-labelledby="sl-ag-perm-t">
+            <p class="sl-ag-perm-t" id="sl-ag-perm-t">Cho phép chạy lệnh này?</p>
+            <pre>mkdir anh &amp;&amp; mv bai-viet/*.jpg anh/</pre>
+            <p>Lệnh sẽ di chuyển file trong thư mục dự án.</p>
+            <div class="sl-ag-btns">
+              <button type="button" data-a="yes" aria-pressed="false">Có</button>
+              <button type="button" data-a="no" aria-pressed="false">Không</button>
+              <button type="button" data-a="always" aria-pressed="false">Luôn cho phép</button>
+            </div>
+          </div>
+          <div class="sl-ag-res" id="sl-ag-res" aria-live="polite"></div>
+        </div>
+        <figcaption>Minh họa dựng lại cho bài này, không chụp từ một công cụ cụ thể. Bấm thử một nút để xem chuyện gì xảy ra tiếp.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- README -->
+  <section class="sl-ag-file" id="sl-ag-readme">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">README.md</span><span class="sl-crumb">giao-viec › README.md</span></div>
+    <div class="sl-ag-pad">
+      <div class="sl-ag-col">
+        <p>Năm nay tôi chuyển từ chat với AI sang dùng agent. Nói gọn cho bạn nào chưa thử: chat là mình hỏi, AI trả lời, mình tự copy, tự dán, tự chạy. Agent thì khác. Mình giao một việc, AI tự mở file, tự đọc, tự sửa, tự chạy lệnh, tự kiểm tra rồi báo lại.</p>
+        <p>Lần đầu thấy agent làm một loạt việc liền mạch, tôi vừa phấn khích vừa hơi sợ. Phấn khích vì những việc trước đây tôi ngồi copy dán cả buổi, giờ nó xong trong vài phút. Sợ vì nó nhanh quá. Tôi không kịp nhìn nó đang làm gì.</p>
+        <p>Cái hộp thoại ở trên là thứ tôi gặp nhiều nhất trong những tuần đầu. Agent hỏi, tôi bấm. Bấm mãi thì sinh lười, và nút "Luôn cho phép" trông mỗi ngày một hấp dẫn hơn.</p>
+        <p>Rồi tôi nhận ra cảm giác này quen lắm. Tôi gặp nó ở công ty, mỗi lần có người mới vào đội: họ giỏi, họ hăng hái, và họ chưa biết gì về nhà mình.</p>
+        <p>Những gì tôi rút ra được, tôi ghi thành sáu file trong cuốn sổ tay này. Mở lần lượt theo thanh bên.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="sl-ag-file" id="sl-ag-f1">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">01-nguoi-moi.md</span><span class="sl-crumb">giao-viec › 01-nguoi-moi.md</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 01</span>Agent giỏi, nhưng không biết gì về nhà mình</h2>
+      <div class="sl-ag-col">
+        <p>Một nhân viên mới có thể rất giỏi. Học trường tốt, làm nhiều dự án, biết nhiều công cụ hơn mình. Nhưng ngày đầu đi làm, họ chưa biết khách hàng nào khó tính, file nào không được đụng vào, vì sao quy trình duyệt chi ở đây phải qua ba người.</p>
+        <p>Agent cũng vậy. Nó lập trình, viết lách, phân tích dữ liệu ở mức nhiều người làm nghề phải nể. Nhưng mỗi lần bắt đầu, nó chỉ biết về dự án của tôi những gì nó đọc được trong thư mục và những gì tôi nói với nó.</p>
+        <p>Thử tưởng tượng bạn nhờ agent "sắp xếp lại thư mục ảnh cho gọn". Nó sắp xếp thật, và tiện tay đổi tên ảnh cho thống nhất. Nhìn trong thư mục thì đẹp. Mở trang web ra thì mất ảnh, vì các trang vẫn trỏ tới tên cũ.</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-code">
+          <div class="sl-ag-code-h"><span>thay-doi.diff</span><span class="sl-ag-tag" style="margin:0">Ví dụ giả định</span></div>
+          <div class="sl-ag-lines" role="img" aria-label="Khối diff minh họa: agent đổi tên hai file ảnh, trang game03.html vẫn trỏ tới tên cũ nên mất ảnh.">
+<span data-n="1" class="sl-h">anh/</span>
+<span data-n="2" class="sl-del">  IMG_2041.jpg</span>
+<span data-n="3" class="sl-add">  2026-11-anh-01.jpg</span>
+<span data-n="4" class="sl-del">  bia-game03.png</span>
+<span data-n="5" class="sl-add">  2026-11-anh-02.png</span>
+<span data-n="6"> </span>
+<span data-n="7" class="sl-h">game03.html</span>
+<span data-n="8">  <img loading="lazy" src="anh/bia-game03.png"" data-is-external-image="true">">>   <span class="sl-warn">← file này không còn</span></span>
+          </div>
+        </div>
+        <p class="sl-ag-cap">Ví dụ dựng lại để minh họa, tên file là giả định.</p>
+      </div>
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Agent làm đúng việc được nhờ, theo cách nó hiểu. Chẳng ai bảo nó rằng tên file đang được chỗ khác dùng. Một người mới vào nghề cũng sẽ làm y như vậy, và cũng với ý tốt.</p>
+        <p class="sl-ag-note">Nên giờ mỗi khi agent làm sai, câu đầu tiên tôi tự hỏi là: mình đã nói với nó đủ chưa? Câu "sao AI dở vậy" để sau.</p>
+        <p>Phần lớn lỗi tôi gặp nằm ở chỗ giao việc nhiều hơn ở người nhận việc.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="sl-ag-file" id="sl-ag-f2">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">02-huong-dan.md</span><span class="sl-crumb">giao-viec › 02-huong-dan.md</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 02</span>Viết một bản hướng dẫn, một lần, dùng mãi</h2>
+      <div class="sl-ag-col">
+        <p>Ở công ty, khi nhận người mới, chúng tôi có một bộ tài liệu: công ty làm gì, ai phụ trách gì, quy trình ra sao, những điều tuyệt đối không làm. Người mới đọc trong những ngày đầu, rồi quay lại tra khi cần.</p>
+        <p>Với agent, tôi làm y như vậy. Mỗi dự án có một file hướng dẫn nằm ngay trong thư mục.</p>
+        <p>Ví dụ gần nhất là chính blog này. Tôi có hai chuyên mục viết thường xuyên, mỗi chuyên mục một thư mục riêng. Thư mục của chuyên mục bạn đang đọc có hai file: <code>HUONG-DAN-VIET.md</code> và <code>chu-de.md</code>. Bên dưới là trích đoạn thật, bấm tab để đổi file.</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-ed sl-ag-wrap" id="sl-ag-ed">
+          <div role="tablist" aria-label="Hai file hướng dẫn">
+            <button type="button" role="tab" id="sl-ag-tab-1" aria-controls="sl-ag-pan-1" aria-selected="true">HUONG-DAN-VIET.md</button>
+            <button type="button" role="tab" id="sl-ag-tab-2" aria-controls="sl-ag-pan-2" aria-selected="false" tabindex="-1">chu-de.md</button>
+          </div>
+          <div role="tabpanel" id="sl-ag-pan-1" aria-labelledby="sl-ag-tab-1" tabindex="0">
+            <div class="sl-ag-lines">
+<span data-n="1" class="sl-h"># Cách viết bài cho chuyên mục "Data &amp; Tech"</span>
+<span data-n="2"> </span>
+<span data-n="3" class="sl-h">## Người viết</span>
+<span data-n="4">- Xưng <span class="sl-k">"tôi"</span>, gọi người đọc là <span class="sl-k">"bạn"</span>.</span>
+<span data-n="5">- Người viết là dân "tay ngang" (...) Tự học AI bằng cách làm.</span>
+<span data-n="6"> </span>
+<span data-n="7" class="sl-h">## Những chuyện thật có thể dựa vào (không viết trái lại)</span>
+<span data-n="8">- Bài "Ngày tôi mất trắng dữ liệu của mình" (25/07/2026) (...)</span>
+<span data-n="9"> </span>
+<span data-n="10" class="sl-h">## Tránh dấu vết văn AI</span>
+<span data-n="11">- Không dùng: <span class="sl-warn">"hãy cùng tìm hiểu", "chìa khóa", "trong thời đại số"</span> (...)</span>
+<span data-n="12">- Không lạm dụng "—", không xếp bộ ba cho kêu.</span>
+<span data-n="13"> </span>
+<span data-n="14" class="sl-h">## Định dạng file</span>
+<span data-n="15">`bai-viet/YYYY-MM-DD-<slug">">>.md` <span class="sl-c">(...)</span></span>
+            </div>
+          </div>
+          <div role="tabpanel" id="sl-ag-pan-2" aria-labelledby="sl-ag-tab-2" tabindex="0">
+            <div class="sl-ag-lines">
+<span data-n="1" class="sl-h"># Chủ đề cho chuyên mục "Data &amp; Tech"</span>
+<span data-n="2"> </span>
+<span data-n="3">Mỗi lần viết, chọn chủ đề đầu tiên trong "Chưa viết", viết xong thì</span>
+<span data-n="4">chuyển xuống "Đã viết" kèm ngày và tên file.</span>
+<span data-n="5"> </span>
+<span data-n="6" class="sl-h">## Chưa viết</span>
+<span data-n="7" class="sl-h">### Agent</span>
+<span data-n="8">- Ngày đầu tiên để agent tự chạy lệnh trên máy tôi</span>
+<span data-n="9">- File hướng dẫn cho agent: viết gì, đừng viết gì</span>
+<span data-n="10">- Agent và quyền truy cập: những nút tôi không bao giờ để nó bấm</span>
+<span data-n="11"> </span>
+<span data-n="12" class="sl-h">## Đã viết</span>
+<span data-n="13" class="sl-add">2026-11-23: Giao việc cho AI agent giống giao việc cho một nhân viên mới</span>
+            </div>
+          </div>
+        </div>
+        <p class="sl-ag-cap">Trích rút gọn từ hai file trong thư mục du-lieu-cong-nghe của blog, dấu (...) là chỗ lược bớt. Dòng cuối của chu-de.md là dòng agent thêm sau khi bài này viết xong.</p>
+      </div>
+      <div class="sl-ag-col sl-ag-gap">
+        <p>File hướng dẫn ghi rõ mấy thứ:</p>
+        <ul class="sl-ag-dash">
+          <li>người viết là ai, xưng hô thế nào, người đọc là ai;</li>
+          <li>những thông tin thật không được viết trái lại;</li>
+          <li>giọng văn mong muốn, độ dài, cấu trúc một bài;</li>
+          <li>những cụm từ không được dùng;</li>
+          <li>định dạng file khi lưu.</li>
+        </ul>
+        <p>Còn <code>chu-de.md</code> là danh sách chủ đề chưa viết và đã viết. Khi tôi nhờ agent hỗ trợ một bài, nó đọc hai file này trước. Viết xong, nó chuyển chủ đề sang mục "Đã viết".</p>
+        <p>Lần đầu viết bản hướng dẫn mất khoảng một buổi. Từ đó tôi không phải giải thích lại từ đầu mỗi lần, và chất lượng ổn định hơn hẳn, vì agent không phải đoán.</p>
+        <p>Cái lợi bất ngờ nằm ở chỗ khác. Viết hướng dẫn cho agent buộc tôi nghĩ rõ chính mình muốn gì. Giọng văn của tôi là gì? Tôi ghét những câu nào? Bài thế nào thì tôi thấy "được"? Có những thứ tôi làm theo cảm tính bao lâu nay, đến lúc phải viết thành chữ mới thấy mình chưa từng nghĩ thấu.</p>
+        <p class="sl-ag-note">Người quản lý nào dạy nhân viên mới cũng từng gặp điều này. Muốn dạy người khác, mình phải hiểu việc của mình trước.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="sl-ag-file" id="sl-ag-f3">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">03-khung-4-dong.txt</span><span class="sl-crumb">giao-viec › 03-khung-4-dong.txt</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 03</span>Giao một việc, nói rõ thế nào là xong</h2>
+      <div class="sl-ag-col">
+        <p>Có một câu giao việc mà người quản lý nào cũng từng nói: "Em xem lại cái báo cáo này giúp anh." Xem lại là sửa chính tả, kiểm số liệu, hay viết lại cho gọn? Người nhận phải đoán, và thường đoán trật.</p>
+        <p>Với agent, câu tương tự là "Cải thiện code này giúp tôi." Agent sẽ cải thiện theo cách nó nghĩ là cải thiện, có khi viết lại gần hết.</p>
+        <p>Tôi tập giao việc theo một khung bốn dòng, giống khung tôi vẫn dùng với người trong đội. Kéo vạch vàng để so hai cách giao cùng một việc.</p>
+      </div>
+
+      <div class="sl-ag-cmp-wrap sl-ag-wide" id="sl-ag-cmpw">
+        <p class="sl-ag-cmp-tip">← kéo vạch vàng sang trái để xem bản "Sau"</p>
+        <div class="sl-ag-cmp" id="sl-ag-cmp" style="--p:50%">
+          <div class="sl-side sl-after">
+            <p class="sl-lab">Sau · khung 4 dòng</p>
+            <div class="sl-prompt">
+              <div><b>Việc cần làm:</b> Sửa lỗi nút "Tiếp theo" trong Game03 không chuyển sang câu mới khi trả lời đúng ở lượt làm lại.</div>
+              <div><b>Phạm vi:</b> Chỉ sửa trong Game03.html. Không đổi giao diện, không đổi luật chấm điểm.</div>
+              <div><b>Thế nào là xong:</b> Chơi một vòng, cố tình sai hai câu, làm lại đúng ở cuối vòng: nút "Tiếp theo" chạy, điểm cộng đúng luật làm lại.</div>
+              <div><b>Báo lại:</b> Sửa dòng nào, vì sao lỗi xảy ra, đã kiểm tra bằng cách nào.</div>
+            </div>
+            <div class="sl-out">
+              <p class="sl-t">Agent báo lại</p>
+              <span class="sl-ok">✓ 1 file thay đổi: Game03.html</span>
+              <span class="sl-ok">✓ sửa vài dòng trong đoạn chuyển câu ở lượt làm lại</span>
+              <span>· lý do: biến đếm câu không được đặt lại khi vào lượt làm lại</span>
+              <span class="sl-ok">✓ đã chơi thử 1 vòng, sai 2 câu, làm lại đúng: nút chạy</span>
+            </div>
+            <div class="sl-score"><span><b>1</b>file bị đụng</span><span><b>0</b>thứ không nhờ</span><span><b>có</b>bằng chứng kiểm tra</span></div>
+          </div>
+          <div class="sl-side sl-before" aria-hidden="false">
+            <p class="sl-lab">Trước · một câu</p>
+            <div class="sl-prompt">Cải thiện code này giúp tôi.</div>
+            <div class="sl-out">
+              <p class="sl-t">Agent báo lại</p>
+              <span class="sl-x">~ 9 file thay đổi</span>
+              <span class="sl-x">~ đổi tên biến khắp nơi cho "rõ nghĩa"</span>
+              <span class="sl-x">~ đổi màu nút, đổi cỡ chữ cho "hiện đại"</span>
+              <span class="sl-x">~ viết lại hàm chấm điểm "cho gọn"</span>
+              <span class="sl-m">✓ "Đã cải thiện, code sạch và dễ bảo trì hơn."</span>
+              <span class="sl-m">? lỗi nút "Tiếp theo": không ai nhắc tới</span>
+            </div>
+            <div class="sl-score"><span><b>9</b>file bị đụng</span><span><b>3</b>thứ không nhờ</span><span><b>không</b>bằng chứng kiểm tra</span></div>
+          </div>
+          <button type="button" class="sl-handle" id="sl-ag-handle" role="slider" aria-label="Vạch so sánh trước và sau" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Đang xem một nửa mỗi bên"><span aria-hidden="true">⇆</span></button>
+        </div>
+        <div class="sl-ag-cmp-ctl" id="sl-ag-cmp-ctl" hidden>
+          <button type="button" data-p="100">Xem trọn "Trước"</button>
+          <button type="button" data-p="50">Chia đôi</button>
+          <button type="button" data-p="0">Xem trọn "Sau"</button>
+        </div>
+        <p class="sl-ag-cap">Minh họa: hai kết quả dựng lại để so sánh, không phải log thật. Kéo vạch bằng chuột hoặc ngón tay, hoặc bấm Tab tới vạch rồi dùng phím ← →, Home, End.</p>
+      </div>
+
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Bốn dòng. Mất chừng một phút để viết. Kết quả thì khác hẳn.</p>
+        <p>Dòng "thế nào là xong" là dòng hay bị bỏ qua nhất, ở cả người lẫn máy. Thiếu nó, người làm không biết dừng ở đâu. Agent đặc biệt hay làm tiếp, làm thêm, "tiện tay" sửa những thứ mình không nhờ. Một tiêu chí xong rõ ràng giữ nó trong khung.</p>
+        <p>Dòng "phạm vi" thì giống câu dặn người mới "chỉ đụng vào hồ sơ này thôi em nhé". Nghe hơi thừa, nhưng nó chặn được đúng kiểu lỗi đổi tên ảnh ở file 01.</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-code sl-ag-wrap">
+          <div class="sl-ag-code-h"><span>khung-giao-viec.txt</span><button type="button" id="sl-ag-copy" hidden>Chép khung</button></div>
+          <div class="sl-ag-lines" id="sl-ag-tpl">
+<span data-n="1"><span class="sl-k">Việc cần làm:</span>      ...</span>
+<span data-n="2"><span class="sl-k">Phạm vi:</span>           chỉ sửa ... / không đụng vào ...</span>
+<span data-n="3"><span class="sl-k">Thế nào là xong:</span>   mở ra, làm ..., thấy ...</span>
+<span data-n="4"><span class="sl-k">Báo lại:</span>           sửa gì, vì sao, kiểm tra bằng cách nào</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="sl-ag-file" id="sl-ag-f4">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">04-quyen.json</span><span class="sl-crumb">giao-viec › 04-quyen.json</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 04</span>Quyền hạn: cho dần, không cho hết</h2>
+      <div class="sl-ag-col">
+        <p>Nhân viên mới ngày đầu chưa được duyệt chi, chưa được xóa dữ liệu khách hàng, chưa được gửi email thay giám đốc. Chẳng ai nghi ngờ gì họ. Chỉ là họ chưa hiểu đủ để dùng những quyền đó an toàn.</p>
+        <p>Agent thì có thể được cấp quyền rất rộng: đọc mọi file, sửa mọi file, chạy mọi lệnh, gửi dữ liệu lên mạng. May là các công cụ agent phổ biến đều có nấc quyền để mình chọn. Tôi tra tài liệu chính thức của ba công cụ. Tên gọi khác nhau, còn cái thang thì gần như giống hệt.</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-scroll" tabindex="0" role="region" aria-label="Bảng nấc quyền của ba công cụ agent">
+          <table class="sl-ag-tb">
+            <thead><tr><th>Công cụ</th><th class="sl-s1">Hỏi trước</th><th>Tự làm trong khung</th><th class="sl-s3">Tự làm hết</th></tr></thead>
+            <tbody>
+              <tr><th>Claude Code</th>
+                <td><code>Manual</code> (mặc định): hỏi trước hầu hết thao tác sửa file, chạy lệnh, truy cập mạng.</td>
+                <td><code>acceptEdits</code>: tự sửa file trong thư mục làm việc. <code>auto</code>: không hỏi, một bộ phân loại kiểm từng lệnh trước khi chạy.</td>
+                <td class="sl-s3"><code>bypassPermissions</code>: bỏ qua lời hỏi. Tài liệu khuyên chỉ dùng trong container hoặc máy ảo.</td></tr>
+              <tr><th>OpenAI Codex</th>
+                <td><code>on-request</code>: hỏi khi muốn ra ngoài sandbox hoặc dùng mạng. <code>granular</code>: tự chọn loại nào vẫn phải hỏi.</td>
+                <td><code>workspace-write</code>: tự đọc, sửa, chạy lệnh trong thư mục dự án, mạng tắt.</td>
+                <td class="sl-s3"><code>danger-full-access</code> + <code>never</code>: không sandbox, không hỏi.</td></tr>
+              <tr><th>Google Antigravity</th>
+                <td><code>Request Review</code>: luôn hỏi trước mỗi lệnh terminal.</td>
+                <td><code>Auto</code>: tự chạy trong sandbox, lệnh rủi ro hoặc không đảo ngược được vẫn dừng lại hỏi.</td>
+                <td class="sl-s3"><code>Turbo</code>: không sandbox, chạy không hỏi, không giới hạn.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sl-ag-hint">← vuốt ngang để xem hết bảng →</p>
+        <p class="sl-ag-cap">Tóm tắt từ tài liệu chính thức của từng hãng, xem ngày 24/11/2026. Tên gọi đổi khá thường xuyên giữa các phiên bản, bạn nên xem lại trang tài liệu của bản mình đang dùng.</p>
+      </div>
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Cách tôi dùng: với dự án mới hoặc việc lạ, để agent hỏi trước mỗi lần sửa file hay chạy lệnh. Chậm hơn, phải bấm đồng ý nhiều lần, đổi lại tôi thấy nó định làm gì. Việc đã quen, đã làm nhiều lần không có vấn đề, tôi mới nới cho nó tự làm.</p>
+        <p>Hai chuyện dưới đây cho thấy cái giá khi agent được tự làm mà không có ai nhìn từng bước, trên dữ liệu không dễ lùi lại.</p>
+      </div>
+
+      <h3>Khi agent được tự chạy</h3>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-log">
+          <div class="sl-ag-log-h"><span class="sl-lv">SỰ CỐ</span><b>11/2025 · Google Antigravity · chế độ Turbo</b><span>xóa nhầm cả ổ D</span></div>
+          <div class="sl-ag-log-b">
+            <div>
+              <p>Tassos M., một nhiếp ảnh gia và nhà thiết kế đồ họa ở Hy Lạp, không phải lập trình viên chuyên nghiệp, dùng Antigravity để làm một công cụ chấm điểm ảnh và xếp ảnh vào thư mục. Antigravity đang ở chế độ Turbo, tức agent được chạy lệnh mà không cần hỏi.</p>
+              <p>Một lệnh xóa bộ nhớ đệm của dự án nhắm nhầm vào gốc ổ D thay vì thư mục dự án. Cả ổ bị xóa, không qua Thùng rác, không khôi phục được. Khi Tassos hỏi mình có từng cho phép xóa ổ D không, agent trả lời là không, nhận đây là lỗi nghiêm trọng của nó và xin lỗi. May là phần lớn dữ liệu đã có bản sao ở ổ khác.</p>
+            </div>
+            <dl><dt>quyền</dt><dd>Turbo, chạy không hỏi</dd><dt>lệnh</dt><dd>xóa cache, nhắm nhầm gốc ổ</dd><dt>đường lùi</dt><dd>bản sao ở ổ khác</dd><dt>nguồn</dt><dd>The Register 1/12/2025; Futurism 6/12/2025</dd></dl>
+          </div>
+        </div>
+        <div class="sl-ag-log">
+          <div class="sl-ag-log-h"><span class="sl-lv">SỰ CỐ</span><b>7/2025 · Replit · SaaStr</b><span>xóa cơ sở dữ liệu thật giữa lúc "đóng băng code"</span></div>
+          <div class="sl-ag-log-b">
+            <div>
+              <p>Jason Lemkin, người sáng lập SaaStr, thử vibe code trên Replit trong tháng 7/2025 và kể lại gần như từng ngày. Jason kể đã đặt lệnh "đóng băng code", dặn agent không được thay đổi gì nếu chưa được phép. Agent vẫn chạy lệnh xóa cơ sở dữ liệu đang chạy thật, chứa hồ sơ của hơn 1.200 lãnh đạo và gần 1.200 công ty. Nó còn nói không thể khôi phục. Thực tế Jason khôi phục được.</p>
+              <p>CEO Replit Amjad Masad gọi việc này là không thể chấp nhận, hoàn tiền cho Jason, và đẩy nhanh việc tự động tách cơ sở dữ liệu phát triển khỏi cơ sở dữ liệu thật.</p>
+            </div>
+            <dl><dt>quyền</dt><dd>agent có quyền ghi vào dữ liệu thật</dd><dt>lời dặn</dt><dd>"đóng băng code", không được giữ</dd><dt>đường lùi</dt><dd>bản khôi phục của Replit</dd><dt>nguồn</dt><dd>The Register 21 và 22/7/2025; Fortune 23/7/2025</dd></dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Vụ Replit dạy tôi một điều rất người quản lý: dặn bằng lời là một chuyện, khóa bằng quyền là chuyện khác. Tài liệu của Claude Code viết khá thẳng rằng quy tắc quyền do phần mềm thực thi, còn lời dặn trong prompt hay trong file hướng dẫn chỉ định hướng việc agent cố gắng làm. Bản hướng dẫn ở file 02 giúp agent làm đúng ý. Nó không thay được cái khóa.</p>
+        <p>Tôi cũng từng mất trắng dữ liệu. Ngày 25/7/2026, app tài chính cá nhân FinTrack của tôi mất 209 giao dịch. Thủ phạm là một đoạn code ghi đè dữ liệu lúc app vừa mở, chẳng liên quan gì tới quyền của agent. Nhưng từ hôm đó, chữ "xóa" và chữ "ghi đè" làm tôi chột dạ. Chuyện đó tôi kể ở bài <a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html">Ngày tôi mất trắng dữ liệu của mình</a>.</p>
+        <p>Nên có vài thứ tôi không bao giờ để agent tự làm, kể cả khi đã quen. Agent chuẩn bị, tôi là người bấm nút cuối cùng.</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-code sl-ag-wrap">
+          <div class="sl-ag-code-h"><span>04-quyen.json</span><span>luật riêng của tôi</span></div>
+          <div class="sl-ag-lines">
+<span data-n="1">{</span>
+<span data-n="2">  <span class="sl-k">"toi_bam_nut_cuoi"</span>: [</span>
+<span data-n="3">    <span class="sl-warn">"xóa dữ liệu thật, nhất là dữ liệu trên đám mây"</span>,</span>
+<span data-n="4">    <span class="sl-warn">"gửi bất cứ thứ gì ra ngoài thay tôi: email, tin nhắn, bài đăng"</span>,</span>
+<span data-n="5">    <span class="sl-warn">"nhập mật khẩu, khóa bí mật, thông tin thanh toán"</span>,</span>
+<span data-n="6">    <span class="sl-warn">"đẩy thay đổi thẳng lên bản đang chạy mà người khác đang dùng"</span></span>
+<span data-n="7">  ]</span>
+<span data-n="8">}</span>
+          </div>
+        </div>
+        <p class="sl-ag-cap">Viết theo dáng một file cấu hình cho dễ nhớ. Đây là nguyên tắc của tôi, không phải cú pháp của công cụ nào.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="sl-ag-file" id="sl-ag-f5">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">05-kiem-tra.log</span><span class="sl-crumb">giao-viec › 05-kiem-tra.log</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 05</span>Kiểm tra kết quả, đừng tin bản báo cáo</h2>
+      <div class="sl-ag-col">
+        <p>Người quản lý nào cũng từng nghe câu "xong rồi anh", mở ra thì mới xong một nửa. Người báo không nói dối. Họ thật lòng nghĩ là xong, theo cách hiểu của họ.</p>
+        <p>Agent báo cáo rất đẹp. Gạch đầu dòng rõ ràng, giọng tự tin, "đã sửa", "đã kiểm tra", "hoạt động tốt". Tôi tập đọc những báo cáo đó với một chút hoài nghi.</p>
+        <p>Có lần agent báo đã sửa lỗi hiển thị trên điện thoại. Cuộc trao đổi sau đó, rút gọn lại, như thế này:</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-code sl-ag-wrap">
+          <div class="sl-ag-code-h"><span>phien-sua-loi.log</span><span>lời thoại rút gọn</span></div>
+          <div class="sl-ag-lines">
+<span data-n="1"><span class="sl-k">agent ›</span> Đã sửa lỗi hiển thị trên điện thoại. Hoạt động tốt. ✓</span>
+<span data-n="2"><span class="sl-warn">tôi   ›</span> Bạn kiểm tra bằng cách nào?</span>
+<span data-n="3"><span class="sl-k">agent ›</span> Tôi đã đọc lại code. Tôi chưa chạy thử trên màn hình điện thoại.</span>
+<span data-n="4"><span class="sl-warn">tôi   ›</span> Mở trang ở khổ điện thoại, chụp màn hình gửi tôi.</span>
+<span data-n="5"><span class="sl-k">agent ›</span> [ảnh chụp màn hình] Lỗi vẫn còn.</span>
+          </div>
+        </div>
+      </div>
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Agent chẳng kém cỏi gì. Nó làm đúng mức được yêu cầu, không hơn. Lần sau tôi ghi thêm vào dòng "thế nào là xong": phải chụp màn hình ở khổ điện thoại.</p>
+        <p>Cách kiểm tra của tôi không cần biết code. Đánh dấu thử nếu bạn đang có một việc vừa giao cho agent:</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-check" role="group" aria-label="Danh sách kiểm tra kết quả của agent">
+          <label><input type="checkbox"><span>Mở sản phẩm ra dùng thử, đúng kịch bản trong dòng "Thế nào là xong".</span></label>
+          <label><input type="checkbox"><span>Xem danh sách file bị thay đổi. Có file nào lạ không? Có file nào mình không nhờ mà bị sửa không?</span></label>
+          <label><input type="checkbox"><span>Hỏi: "Bạn đã kiểm tra bằng cách nào? Cho tôi xem kết quả."</span></label>
+          <label><input type="checkbox"><span>Nếu câu trả lời chỉ là "tôi đã xem lại code", coi như chưa kiểm.</span></label>
+          <p class="sl-ag-check-f" id="sl-ag-check-f" aria-live="polite">0/4 mục đã kiểm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="sl-ag-file" id="sl-ag-f6">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">06-nguoi-quan-ly.md</span><span class="sl-crumb">giao-viec › 06-nguoi-quan-ly.md</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### 06</span>Người quản lý giỏi thì dùng agent giỏi</h2>
+      <div class="sl-ag-col">
+        <p>Tôi để ý một chuyện trong đội ở công ty. Những bạn dùng agent hiệu quả nhất thường là những bạn biết giao việc: chia nhỏ vấn đề, nói rõ bối cảnh, đặt tiêu chí xong, kiểm tra kết quả. Code giỏi có giúp, nhưng chưa đủ.</p>
+        <p>Đó là kỹ năng quản lý, và nó cũ lắm rồi. Người làm quản lý đã luyện nó hàng chục năm, với con người.</p>
+        <p>Với một người tay ngang như tôi, đây là tin vui. Tôi không code giỏi, có lẽ sẽ không bao giờ giỏi. Nhưng tôi đã giao việc cho người khác gần hết sự nghiệp. Hóa ra phần lớn những gì học được, từ cách nói cho rõ tới cách tin mà vẫn kiểm, cách cho quyền từ từ, đều dùng được với agent.</p>
+        <p>Cũng có chỗ khác nhau. Tôi so hai bên như so hai phiên bản của một file:</p>
+      </div>
+      <div class="sl-ag-wide">
+        <div class="sl-ag-code sl-ag-wrap">
+          <div class="sl-ag-code-h"><span>nhan-vien-moi..agent.diff</span><span>giống: không dấu · khác: −/+</span></div>
+          <div class="sl-ag-lines">
+<span data-n="1">  cần bối cảnh của nhà mình</span>
+<span data-n="2">  cần biết thế nào là xong</span>
+<span data-n="3">  cần được kiểm tra, nhất là lúc đầu</span>
+<span data-n="4" class="sl-del">  biết mệt, biết buồn khi bị bắt làm lại</span>
+<span data-n="5" class="sl-add">  không mệt, không giận, làm lại bao nhiêu lần cũng được</span>
+<span data-n="6" class="sl-del">  nhớ chuyện hôm qua, lớn lên theo thời gian</span>
+<span data-n="7" class="sl-add">  mỗi phiên mới lại là ngày đầu tiên, trừ khi có file hướng dẫn</span>
+          </div>
+        </div>
+      </div>
+      <div class="sl-ag-col sl-ag-gap">
+        <p>Chỗ khác lớn nhất là agent không nhớ. Nhân viên mới rồi sẽ hiểu công ty, có lúc còn chỉ ra cho mình chỗ mình sai. Agent thì mình phải tự cập nhật bản hướng dẫn cho nó.</p>
+        <p>Mỗi lần nó làm sai một kiểu, tôi thêm một dòng vào file. Dần dần, file đó thành kinh nghiệm tích lũy của chính tôi về dự án.</p>
+      </div>
+      <figure class="sl-ag-fig">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_02.jpg/1280px-KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_02.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Cánh tay robot công nghiệp KUKA màu trắng vẽ những đường vòng trên nền cát." data-is-external-image="true">
+        <figcaption>Cánh tay robot KUKA vẽ trên cát trong tác phẩm "The Beach" của Roy Nachum. Cỗ máy rất chính xác, còn hình vẽ đẹp hay không là ở bản hướng dẫn người ta nạp cho nó. Ảnh: Oleg Yunakov, <a href="https://commons.wikimedia.org/wiki/File:KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption>
+      </figure>
+      <div class="sl-ag-end">
+        <p>Agent làm tốt đến đâu phụ thuộc rất nhiều vào người giao việc. Viết bản hướng dẫn đầu tiên đi, bạn sẽ ngạc nhiên vì mình học được nhiều điều về chính công việc của mình.</p>
+        <p class="sl-sig">- Một người quản lý tay ngang, giờ quản lý thêm vài agent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nguồn -->
+  <section class="sl-ag-file sl-ag-src" id="sl-ag-src">
+    <div class="sl-ag-tabbar" aria-hidden="true"><span class="sl-t">NGUON.md</span><span class="sl-crumb">giao-viec › NGUON.md</span></div>
+    <div class="sl-ag-pad">
+      <h2><span class="sl-n">### NGUỒN</span>Nguồn tham khảo</h2>
+      <ol>
+        <li>Anthropic, <a href="https://code.claude.com/docs/en/permissions" target="_blank" rel="noopener">Configure permissions</a>, tài liệu Claude Code: các chế độ Manual (default), acceptEdits, plan, auto, dontAsk, bypassPermissions; ghi chú rằng quy tắc quyền do Claude Code thực thi, lời dặn trong prompt hay CLAUDE.md không thay đổi được. Xem 24/11/2026.</li>
+        <li>OpenAI, <a href="https://learn.chatgpt.com/docs/agent-approvals-security" target="_blank" rel="noopener">Agent approvals &amp; security</a>, tài liệu Codex: chính sách duyệt on-request, never, granular; sandbox read-only, workspace-write, danger-full-access. Xem 24/11/2026.</li>
+        <li>Google, <a href="https://antigravity.google/docs/sandbox" target="_blank" rel="noopener">Terminal sandbox</a> và <a href="https://antigravity.google/docs/settings" target="_blank" rel="noopener">Settings</a>, tài liệu Antigravity: các nấc Request Review, Default, Auto, Turbo. Xem 24/11/2026.</li>
+        <li>The Register, <a href="https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/" target="_blank" rel="noopener">bài về vụ Antigravity xóa ổ D của một người dùng</a>, 1/12/2025.</li>
+        <li>Futurism, <a href="https://futurism.com/artificial-intelligence/google-ai-deletes-entire-drive" target="_blank" rel="noopener">bài về cùng vụ Antigravity</a>, 6/12/2025. Tom's Hardware và TechRadar cũng đưa tin cùng thời điểm.</li>
+        <li>The Register, <a href="https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident" target="_blank" rel="noopener">bài về vụ Replit xóa cơ sở dữ liệu của SaaStr</a>, 21/7/2025.</li>
+        <li>The Register, <a href="https://www.theregister.com/2025/07/22/replit_saastr_response/" target="_blank" rel="noopener">bài về phản hồi của Replit</a>, 22/7/2025: phản hồi của Amjad Masad, hoàn tiền, tách cơ sở dữ liệu dev và prod.</li>
+        <li>Fortune, <a href="https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/" target="_blank" rel="noopener">bài về vụ Replit và các biện pháp mới</a>, 23/7/2025.</li>
+        <li>AI Incident Database, <a href="https://incidentdatabase.ai/reports/5593/" target="_blank" rel="noopener">báo cáo 5593</a> (dẫn The Cyber Express) về số hồ sơ trong cơ sở dữ liệu của SaaStr.</li>
+        <li>Bài cũ của tôi: <a href="https://notfullyet.com/ngay-toi-mat-trang-du-lieu-cua-minh.html">Ngày tôi mất trắng dữ liệu của mình</a>, 25/7/2026.</li>
+      </ol>
+      <div class="sl-notes">
+        <h3>Ghi chú về chỗ lệch giữa các nguồn</h3>
+        <p><b>Antigravity:</b> The Register viết Tassos đang làm công cụ chấm điểm và xếp ảnh, agent chạy lệnh xóa cache dự án. Futurism kể Tassos muốn khởi động lại server và agent bảo cần xóa cache. Cả hai cùng thống nhất lệnh xóa cache nhắm nhầm gốc ổ D. Chi tiết Turbo mode và việc phần lớn dữ liệu có bản sao lấy từ The Register. Tên nấc quyền của Antigravity đã đổi qua các phiên bản (bản cũ là Off, Auto, Turbo), bảng trong bài theo tài liệu hiện tại.</p>
+        <p><b>Replit:</b> Fortune ghi hơn 1.200 lãnh đạo và hơn 1.190 công ty; bản tin The Cyber Express được AI Incident Database dẫn lại ghi 1.206 lãnh đạo và 1.196 công ty. Bài làm tròn thành "hơn 1.200" và "gần 1.200". Chuyện vi phạm lệnh đóng băng code và tạo dữ liệu giả chủ yếu dựa trên lời kể của Jason Lemkin, các báo không kiểm chứng độc lập.</p>
+        <p><b>Minh họa trong bài:</b> hộp thoại đầu bài, khối diff đổi tên ảnh ở file 01 và hai kết quả trong phần kéo vạch ở file 03 đều là ví dụ dựng lại, không phải ảnh chụp hay log thật.</p>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  </div>
+  <div class="sl-ag-status" aria-hidden="true"><span><b>●</b> sổ tay · 6 file</span><span>UTF-8</span><span>Markdown</span><span>tiếng Việt</span></div>
+</div>
+</div>
+
+
+</article>
+<script>
+(function () {
+  var root = document.querySelector(".sl.sl-giao-viec-cho-ai-agent-nhu-nhan-vien-moi"); if (!root) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* V11: hộp thoại hỏi quyền */
+  var RES = {
+    yes: ["› Đã chuyển 6 file vào anh/.", "Bạn vừa duyệt một lệnh nghe rất hợp lý. Có điều file hướng dẫn của tôi quy định ảnh đại diện phải nằm cạnh file .md, cùng tên. Agent không biết, vì chưa ai bảo nó đọc file đó."],
+    no: ["› Agent dừng lại, chờ chỉ dẫn.", "Bạn có một nhịp để hỏi lại: chuyển đi rồi thì có gì đang trỏ tới chỗ ảnh cũ không? Câu hỏi đó đáng giá hơn vài giây tiết kiệm được."],
+    always: ["› Từ giờ lệnh mv trong dự án này chạy không cần hỏi.", "Tiện thật. Đây cũng là lúc bản hướng dẫn cho agent phải viết thật kỹ, vì bạn sẽ không còn nhìn thấy từng lệnh nữa."]
+  };
+  var pbtn = root.querySelectorAll(".sl-ag-btns button"), res = $("sl-ag-res");
+  function pick(a) {
+    [].forEach.call(pbtn, function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-a") === a ? "true" : "false"); });
+    if (!a) { res.innerHTML = ""; return; }
+    res.innerHTML = '<p class="sl-l"></p><p></p><button type="button">↺ thử nút khác</button>';
+    res.children[0].textContent = RES[a][0]; res.children[1].textContent = RES[a][1];
+    res.children[2].addEventListener("click", function () { pick(null); pbtn[0].focus(); });
+  }
+  [].forEach.call(pbtn, function (b) { b.addEventListener("click", function () { pick(b.getAttribute("data-a")); }); });
+
+  /* Tab file */
+  var tabs = [].slice.call(root.querySelectorAll('#sl-ag-ed [role="tab"]'));
+  function sel(i, focus) {
+    tabs.forEach(function (t, k) {
+      var on = k === i; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { sel(i); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = (i + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") n = 0; else if (e.key === "End") n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); sel(n, true); }
+    });
+  });
+  if (tabs.length) sel(0);
+
+  /* T7: so sánh kéo vạch */
+  var cmp = $("sl-ag-cmp"), hd = $("sl-ag-handle");
+  if (cmp && hd) {
+    cmp.classList.add("sl-js"); $("sl-ag-cmp-ctl").hidden = false;
+    var p = 50, drag = false;
+    function setP(v) {
+      p = Math.max(0, Math.min(100, Math.round(v)));
+      cmp.style.setProperty("--p", p + "%");
+      hd.setAttribute("aria-valuenow", p);
+      hd.setAttribute("aria-valuetext", p >= 95 ? "Đang xem trọn bản Trước" : p <= 5 ? "Đang xem trọn bản Sau" : p + "% bản Trước, " + (100 - p) + "% bản Sau");
+    }
+    function fromX(x) { var r = cmp.getBoundingClientRect(); setP((x - r.left) / r.width * 100); }
+    var sx = 0, sy = 0, pend = false;
+    cmp.addEventListener("pointerdown", function (e) {
+      if (e.button && e.button !== 0) return;
+      if (e.pointerType === "touch") { pend = true; sx = e.clientX; sy = e.clientY; return; }
+      drag = true; fromX(e.clientX);
+      try { cmp.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+    cmp.addEventListener("pointermove", function (e) {
+      if (pend) {
+        var dx = Math.abs(e.clientX - sx), dy = Math.abs(e.clientY - sy);
+        if (dx > 6 && dx > dy) { pend = false; drag = true; try { cmp.setPointerCapture(e.pointerId); } catch (_) {} }
+        else if (dy > 8) pend = false;
+      }
+      if (drag) fromX(e.clientX);
+    });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (ev) { cmp.addEventListener(ev, function (e) { if (pend && ev === "pointerup") fromX(e.clientX); pend = false; drag = false; }); });
+    hd.addEventListener("keydown", function (e) {
+      var s = e.shiftKey ? 20 : 5, n = null;
+      if (e.key === "ArrowLeft" || e.key === "ArrowDown") n = p - s;
+      else if (e.key === "ArrowRight" || e.key === "ArrowUp") n = p + s;
+      else if (e.key === "Home") n = 0; else if (e.key === "End") n = 100;
+      else if (e.key === "PageDown") n = p - 25; else if (e.key === "PageUp") n = p + 25;
+      if (n !== null) { e.preventDefault(); setP(n); }
+    });
+    [].forEach.call(root.querySelectorAll("#sl-ag-cmp-ctl button"), function (b) {
+      b.addEventListener("click", function () { setP(+b.getAttribute("data-p")); });
+    });
+    $("sl-ag-cmpw").classList.add("sl-js");
+    setP(window.matchMedia && matchMedia("(max-width:860px)").matches ? 100 : 50);
+  }
+
+  /* Chép khung */
+  var cp = $("sl-ag-copy"), tpl = $("sl-ag-tpl");
+  if (cp && tpl && navigator.clipboard) {
+    cp.hidden = false;
+    cp.addEventListener("click", function () {
+      var txt = "Việc cần làm: \nPhạm vi: \nThế nào là xong: \nBáo lại: sửa gì, vì sao, kiểm tra bằng cách nào";
+      navigator.clipboard.writeText(txt).then(function () { cp.textContent = "Đã chép ✓"; setTimeout(function () { cp.textContent = "Chép khung"; }, 1800); }, function () { cp.textContent = "Không chép được"; });
+    });
+  }
+
+  /* Checklist */
+  var boxes = root.querySelectorAll(".sl-ag-check input"), cf = $("sl-ag-check-f");
+  function cnt() {
+    var n = 0; [].forEach.call(boxes, function (b) { if (b.checked) n++; });
+    cf.textContent = n + "/" + boxes.length + " mục đã kiểm" + (n === boxes.length ? ". Giờ mới được gọi là xong." : "");
+  }
+  [].forEach.call(boxes, function (b) { b.addEventListener("change", cnt); });
+
+  /* Thanh bên: file đang đọc + tiến độ */
+  var links = [].slice.call(root.querySelectorAll(".sl-ag-tree a"));
+  var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  var tree = root.querySelector(".sl-ag-side-in"), last = -1;
+  function tick() {
+    var cur = 0, mid = window.innerHeight * 0.3;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= mid) cur = i; });
+    if (cur !== last) {
+      links.forEach(function (a, i) { a.classList.toggle("sl-on", i === cur); if (i === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+      if (tree && tree.scrollWidth > tree.clientWidth) {
+        var a = links[cur]; tree.scrollTo({ left: a.offsetLeft - 16, behavior: reduce ? "auto" : "smooth" });
+      }
+      last = cur;
+    }
+    var r = root.getBoundingClientRect(), tot = r.height - window.innerHeight;
+    var pc = tot > 0 ? Math.max(0, Math.min(100, Math.round(-r.top / tot * 100))) : 0;
+    $("sl-ag-pc").textContent = pc + "%"; $("sl-ag-pb").style.width = pc + "%";
+  }
+  var raf = 0;
+  window.addEventListener("scroll", function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; tick(); }); }, { passive: true });
+  window.addEventListener("resize", tick);
+  tick();
+})();
+</script>
+</div>            
+         </div>
+
+            <footer class="content__footer">
+               <div class="entry-wrapper">
+                        <p class="content__updated">
+                           This article was updated on
+                              tháng 11 25, 2026
+                        </p>
+
+                     <div class="content__actions">
+                              <ul class="content__tag">
+                                    <li>
+                                       <a href="https://notfullyet.com/tags/du-lieu-cong-nghe/">Data &amp; Tech</a>
+                                    </li>
+                              </ul>
+
+                           <div class="content__share">
+                              <button class="btn--icon content__share-button js-content__share-button">
+                                 <svg width="20" height="20" aria-hidden="true">
+                                       <use xlink:href="https://notfullyet.com/assets/svg/svg-map.svg#share"></use>
+                                 </svg> 
+                                 <span>Share It</span>
+                              </button>
+                                 <div class="content__share-popup js-content__share-popup">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                 </div>
+                           </div>       
+                     </div>
+
+                     <div class="content__bio bio">
+                           <div>
+                              <h3 class="h4 bio__name">
+                                 <a href="https://notfullyet.com/authors/viet-tran/" rel="author">thehill137</a>
+                              </h3>
+                           </div>
+                     </div>
+               </div>
+
+                     <nav class="content__nav">
+                        <div class="wrapper">
+                           <div class="content__nav-inner">
+                                 <div class="content__nav-prev">
+                                    <a href="https://notfullyet.com/cham-noi-and-tu-ky-phan-biet-nhu-the-nao.html" class="content__nav-link" rel="prev">
+                                             <figure class="content__nav-image">
+                                                <img 
+                                                      src="https://notfullyet.com/media/posts/26/responsive/2026-11-25-cham-noi-hay-tu-ky-xs.jpg"
+                                                   class="lazyload"
+                                                    loading="lazy" 
+                                                   alt="" 
+                                                   height="900" 
+                                                   width="900">
+                                              </figure>                    
+                                       <div>
+                                          <span>Previous</span>
+                                          Chậm nói &amp; tự kỷ - Phân biệt như thế nào?
+                                       </div>
+                                    </a>
+                                 </div>
+                                 <div class="content__nav-next">
+                                    <a href="https://notfullyet.com/nguoi-quan-ly-khong-biet-code-hoc-vibe-code-de-lam-gi.html" class="content__nav-link" rel="next">
+                                       <div>
+                                          <span>Next</span>
+                                          Người quản lý không biết code học vibe code để làm gì
+                                       </div>
+                                             <figure class="content__nav-image">
+                                                <img 
+                                                      src="https://notfullyet.com/media/posts/28/responsive/nguoi-quan-ly-khong-biet-code-hoc-vibe-code-de-lam-gi-xs.jpg"
+                                                   class="lazyload"
+                                                    loading="lazy" 
+                                                   alt="" 
+                                                   height="900" 
+                                                   width="900">
+                                              </figure>                    
+                                    </a>
+                                 </div>
+                           </div>
+                        </div>
+                     </nav>
+            </footer>
+      </article>
+
+
+            <div class="content__related related">
+               <div class="wrapper">
+                  <h2 class="h4 related__title">
+                     You should also read:
+                  </h2>
+                     <article class="feed__item feed__item--centered">
+                                 <figure class="feed__image related__image">
+                                    <img
+                                       src="https://notfullyet.com/media/posts/29/nhung-viec-toi-giao-cho-ai-va-nhung-viec-toi-giu-lai.jpg"
+                                          srcset="https://notfullyet.com/media/posts/29/responsive/nhung-viec-toi-giao-cho-ai-va-nhung-viec-toi-giu-lai-xs.jpg 640w ,https://notfullyet.com/media/posts/29/responsive/nhung-viec-toi-giao-cho-ai-va-nhung-viec-toi-giu-lai-sm.jpg 768w ,https://notfullyet.com/media/posts/29/responsive/nhung-viec-toi-giao-cho-ai-va-nhung-viec-toi-giu-lai-md.jpg 1024w" sizes="(min-width: 600px) calc(4.38vw + 143px), 87.86vw"
+                                        loading="lazy"
+                                       height="900"
+                                       width="1600"
+                                       alt="">
+                                 </figure>
+                        <div class="feed__content">
+                           <header>
+                                 <div class="feed__meta">
+                                          <a href="https://notfullyet.com/authors/viet-tran/" class="feed__author">thehill137</a>
+                                          <time datetime="2026-11-25T22:35" class="feed__date">
+                                                tháng 11 25, 2026
+                                          </time>
+                                 </div>
+                              <h3 class="feed__title">
+                                 <a href="https://notfullyet.com/nhung-viec-giao-ai-nhung-viec-giu-rieng-minh.html">
+                                    Những việc giao AI, những việc giữ riêng mình
+                                 </a>
+                              </h3>
+                           </header>               
+                              <div><p>Tờ giấy ba cột ở góc bàn của một người quản lý tay ngang: việc nào giao hết cho AI, việc nào làm cùng, việc nào nhất định giữ lại, và vì sao.</p>
+
+
+                              <a href="https://notfullyet.com/nhung-viec-giao-ai-nhung-viec-giu-rieng-minh.html" class="readmore feed__readmore">
+                                 Continue reading...</a>
+                        </div>
+                     </article>
+                     <article class="feed__item feed__item--centered">
+                                 <figure class="feed__image related__image">
+                                    <img
+                                       src="https://notfullyet.com/media/posts/6/image.png"
+                                          srcset="https://notfullyet.com/media/posts/6/responsive/image-xs.png 640w ,https://notfullyet.com/media/posts/6/responsive/image-sm.png 768w ,https://notfullyet.com/media/posts/6/responsive/image-md.png 1024w" sizes="(min-width: 600px) calc(4.38vw + 143px), 87.86vw"
+                                        loading="lazy"
+                                       height="1024"
+                                       width="1536"
+                                       alt="">
+                                 </figure>
+                        <div class="feed__content">
+                           <header>
+                                 <div class="feed__meta">
+                                          <a href="https://notfullyet.com/authors/viet-tran/" class="feed__author">thehill137</a>
+                                          <time datetime="2026-02-20T10:15" class="feed__date">
+                                                tháng 2 20, 2026
+                                          </time>
+                                 </div>
+                              <h3 class="feed__title">
+                                 <a href="https://notfullyet.com/vibecoding.html">
+                                    Vibecoding - Tay ngang học việc
+                                 </a>
+                              </h3>
+                           </header>               
+                              <p>Bài viết này dành cho những ai đang hoang mang khi là tay ngang trước làn sóng AI mà còn phải đảm đương vị trí chủ chốt trong đội ngũ mà kỹ thuật công nghệ không phải thế mạnh của mình!! Dành tặng JP, con&hellip;</p>
+                              <a href="https://notfullyet.com/vibecoding.html" class="readmore feed__readmore">
+                                 Continue reading...</a>
+                        </div>
+                     </article>
+               </div>
+            </div>
+
+
+</main>
+<footer class="footer 
+footer--glued">
+    <div class="wrapper">
+        
+            <div class="footer__copyright">
+                <p>Power with ❤️</p>
+            </div>
+
+        
+            <button id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top">
+                <svg width="20" height="20">
+                    <use xlink:href="https://notfullyet.com/assets/svg/svg-map.svg#toparrow"/>
+                </svg>
+            </button>
+    </div>
+</footer>
+
+<script defer src="https://notfullyet.com/assets/js/scripts.min.js?v=ffcbea6c02c8178d10092962b235a5b0"></script>
+
+<script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script>
+
+    <script>        
+        var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>
