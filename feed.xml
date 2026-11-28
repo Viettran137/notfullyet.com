@@ -3,7 +3,7 @@
     <title>NFY ♪♫♬♭♯♩♮♫♪°</title>
     <link href="https://notfullyet.com/feed.xml" rel="self" />
     <link href="https://notfullyet.com" />
-    <updated>2026-11-28T16:24:53+07:00</updated>
+    <updated>2026-11-28T16:31:37+07:00</updated>
     <author>
         <name>thehill137</name>
     </author>
@@ -81,7 +81,7 @@
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-fig--hero{margin:28px 0 32px}
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-fig--hero img{aspect-ratio:16/9;object-fit:cover}
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-fig:not(.sl-kt-fig--hero) img{max-height:72vh;object-fit:cover}
-.sl.sl-da-dang-than-kinh-la-gi figcaption{text-align:left;margin-top:10px;font:400 14px/1.55 var(--sans);color:var(--mut)}
+.sl.sl-da-dang-than-kinh-la-gi figcaption{overflow-wrap:anywhere;text-align:left;margin-top:10px;font:400 14px/1.55 var(--sans);color:var(--mut)}
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-cap-t{display:block;color:var(--text);margin-bottom:2px}
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-cap-c{font-size:13px}
 .sl.sl-da-dang-than-kinh-la-gi .sl-kt-cap-c a{color:var(--mut)!important}
